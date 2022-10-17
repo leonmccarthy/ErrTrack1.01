@@ -44,11 +44,12 @@
                           <tr>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Account Creation Date</th>
                             <th>Role</th>
                             <th>Action 1</th>
                             <th>Action 2</th>
                             <th>Action 3</th>
+                            <th>Action 4</th>
+                            <th>Account Creation Date</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -56,8 +57,9 @@
                             <tr>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
-                                <td>{{ $user->created_at }}</td>
                                 <td>
+
+                                  {{-- TO DETERMINE THE BADGE COLOR FOR ROLE --}}
                                     @if ($user->usertype=='0')
                                         <label class="badge badge-success">Tester</label>
                                     @elseif($user->usertype=='49')
@@ -66,10 +68,37 @@
                                         <label class="badge badge-danger">Admin</label>
                                     @endif
                                 </td>
-                                <td>Make Developer</td>
-                                <td>Make Admin</td>
-                                <td>Make Normal User</td>
-                                <td>Delete</td>
+
+                                {{-- TO DETERMINE IF THE BUTTON IS TO BE DISABLED OR NOT DEPENDING ON ROLE --}}
+                                {{-- TESTER --}}
+                                @if ($user->usertype=='0' || $user->usertype=='99')
+                                  <td><a href="#" class="btn btn-rounded btn-secondary" @disabled(true)>Make Tester</a></td>
+                                @else
+                                  <td><a href="" class="btn btn-rounded btn-primary">Make Tester</a></td>
+                                @endif
+
+                                {{-- DEVELOPER --}}
+                                @if ($user->usertype=='49' || $user->usertype=='99')
+                                  <td><a href="#" class="btn btn-rounded btn-secondary " @disabled(true)>Make Developer</a></td>
+                                @else
+                                  <td><a href="" class="btn btn-rounded btn-success">Make Developer</a></td>
+                                @endif
+
+                                {{-- ADMIN --}}
+                                @if ($user->usertype=='99')
+                                  <td><a href="#" class="btn btn-rounded btn-secondary " @disabled(true)>Make Admin</a></td>
+                                @else
+                                  <td><a href="" class="btn btn-rounded btn-warning">Make Admin</a></td>
+                                @endif
+
+                                {{-- DELETING USER --}}
+                                @if ($user->usertype=='99')
+                                  <td><a href="#" class="btn btn-rounded btn-secondary " @disabled(true)>Delete</a></td>
+                                @else
+                                  <td><a href="" class="btn btn-rounded btn-danger">Delete</a></td>
+                                @endif
+                                
+                                <td>{{ $user->created_at }}</td>
                               </tr>
                             @endforeach
                           
