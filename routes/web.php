@@ -22,8 +22,11 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, "index"]);
 Route::get("/redirect", [HomeController::class, "redirect"]);
 Route::get('/add-dev', [AdminController::class, 'adddeveloper']);
-Route::get('viewAllUsers', [AdminController::class, 'viewAllUsers']);
-
+Route::get('/viewAllUsers', [AdminController::class, 'viewAllUsers']);
+Route::post('/maketester/{id}', [AdminController::class, 'maketester']);
+Route::post('/makedeveloper/{id}', [AdminController::class, 'makedeveloper']);
+Route::post('/makeadmin/{id}', [AdminController::class, 'makeadmin']);
+Route::get('/deleteuser/{id}', [AdminController::class, 'deleteuser']);
 
 
 Route::middleware([
