@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
     
-    public function adddeveloper(){
+    public function addDeveloper(){
         $usertype = Auth::user()->usertype;
         $username = Auth::user()->name;
         return view('admin.manage_users.add-dev', compact('username'));
@@ -23,7 +23,7 @@ class AdminController extends Controller
     }
 
     // converting a developer into a tester
-    public function maketester($id){
+    public function makeTester($id){
         $user = User::find($id);
         $user->usertype = '0';
         $user->save();
@@ -31,7 +31,7 @@ class AdminController extends Controller
     }
 
     //converting a tester into a developer
-    public function makedeveloper($id){
+    public function makeDeveloper($id){
         $user = User::find($id);
         $user->usertype = '49';
         $user->save();
@@ -39,7 +39,7 @@ class AdminController extends Controller
     }
 
     //converting a tester or developer into admin
-    public function makeadmin($id){
+    public function makeAdmin($id){
         $user = User::find($id);
         $user->usertype = '99';
         $user->save();
@@ -47,7 +47,7 @@ class AdminController extends Controller
     }
 
     // deleting a user
-    public function deleteuser($id){
+    public function deleteUser($id){
         $user = User::find($id);
         $user->delete($id);
         return redirect()->back();

@@ -18,7 +18,7 @@ class HomeController extends Controller
         if($usertype == "99"){
             return view("admin.admin-home", compact('username'));
         }else{
-            return view("home");
+            return view("tester.tester-home", compact('username'));
         }
     }
     

@@ -10,36 +10,24 @@
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="add-developer">
               <i class="menu-icon mdi mdi-card-text-outline"></i>
-              <span class="menu-title">Add Developer</span>
+              <span class="menu-title">Report Error</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="{{  url('/add-dev') }}">Add Developer</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{  url('/reporterror') }}">Report Error</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="manage-users">
+            <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="manage-developers">
               <i class="menu-icon mdi mdi-chart-line"></i>
-              <span class="menu-title">Manage Users</span>
+              <span class="menu-title">Manage Error</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{ url('/viewallusers') }}">View All Users</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="assign-error">
-              <i class="menu-icon mdi mdi-table"></i>
-              <span class="menu-title">Assign Error</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="tables">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Assign Error</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/viewAllUsers') }}">View Errors</a></li>
               </ul>
             </div>
           </li>

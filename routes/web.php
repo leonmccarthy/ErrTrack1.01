@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\TesterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,12 +22,13 @@ Route::get('/', function () {
 
 Route::get('/home', [HomeController::class, "index"]);
 Route::get("/redirect", [HomeController::class, "redirect"]);
-Route::get('/add-dev', [AdminController::class, 'adddeveloper']);
-Route::get('/viewAllUsers', [AdminController::class, 'viewAllUsers']);
-Route::post('/maketester/{id}', [AdminController::class, 'maketester']);
-Route::post('/makedeveloper/{id}', [AdminController::class, 'makedeveloper']);
-Route::post('/makeadmin/{id}', [AdminController::class, 'makeadmin']);
-Route::get('/deleteuser/{id}', [AdminController::class, 'deleteuser']);
+Route::get('/add-dev', [AdminController::class, 'addDeveloper']);
+Route::get('/viewallusers', [AdminController::class, 'viewAllUsers']);
+Route::post('/maketester/{id}', [AdminController::class, 'makeTester']);
+Route::post('/makedeveloper/{id}', [AdminController::class, 'makeDeveloper']);
+Route::post('/makeadmin/{id}', [AdminController::class, 'makeAdmin']);
+Route::get('/deleteuser/{id}', [AdminController::class, 'deleteUser']);
+Route::get('/reporterror', [TesterController::class, 'reportErrorView']);
 
 
 Route::middleware([
