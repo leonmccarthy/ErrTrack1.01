@@ -12,4 +12,8 @@ class TesterController extends Controller
         $usertype = Auth::user()->usertype;
         return view('tester.error.report-error', compact('username'));
     }
+
+    public function reportErrorAction(Request $request){
+        
+    }
 }
