@@ -61,11 +61,11 @@
 
                                   {{-- TO DETERMINE THE BADGE COLOR FOR ROLE --}}
                                     @if ($user->usertype=='0')
-                                        <label class="badge badge-success">Tester</label>
+                                        <label class="badge badge-primary">Tester</label>
                                     @elseif($user->usertype=='49')
-                                        <label class="badge badge-warning">Developer</label>
+                                        <label class="badge badge-success">Developer</label>
                                     @elseif($user->usertype=='99')
-                                        <label class="badge badge-danger">Admin</label>
+                                        <label class="badge badge-warning">Admin</label>
                                     @endif
                                 </td>
 

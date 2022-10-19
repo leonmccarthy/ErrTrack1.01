@@ -20,7 +20,7 @@ class AdminController extends Controller
         $usertype = Auth::user()->usertype;
         $username = Auth::user()->name;
         $allUsers = User::all();
-        return view('admin.manage_users.viewAllUsers', compact('allUsers', 'username'));
+        return view('admin.manage_users.view-all-users', compact('allUsers', 'username'));
     }
 
     // converting a developer into a tester
@@ -61,4 +61,21 @@ class AdminController extends Controller
         $allReportedErrors = Error::all();
         return view('admin.manage_errors.view-all-reported-errors', compact('allReportedErrors', 'username'));
     }
+
+    // report error view
+    public function assignErrorView($id){
+        $usertype = Auth::user()->usertype;
+        $username = Auth::user()->name;
+        $errorToBeAssigned = Error::find($id);
+        $developer = User::where('usertype', '=', '49')->get();
+        return view('admin.manage_errors.assign-error-view', compact('username', 'errorToBeAssigned', 'developer'));
+    }
+
+    public function assignErrorViewTest(){
+        $usertype = Auth::user()->usertype;
+        $username = Auth::user()->name;
+        // $errorToBeAssigned = Error::find($id);
+        return view('admin.manage_errors.assign-error-view-test', compact('username'));
+    }
+
 }

@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('error_reporter');
             $table->string('error_priority');
             $table->string('error_dev_assigned');
-            $table->integer('error_steps_done');
-            $table->integer('error_steps_to_complete');
+            $table->integer('error_steps_done')->default(0);
+            $table->integer('error_steps_to_complete')->default(0);
             $table->timestamps();
         });
     }

@@ -5,16 +5,16 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>View Errors</title>
+  <title>Manage Users </title>
   
   {{-- STYLESHEET --}}
-  @include('developer.developer-stylesheet')
+  @include('admin.admin-stylesheet')
 </head>
 <body>
   <div class="container-scroller">
     
     {{-- TOP NAVBAR --}}
-    @include('developer.developer-topnavbar')
+    @include('admin.admin-topnavbar')
     <!-- partial -->
 
     {{-- CENTER BODY --}}
@@ -59,10 +59,7 @@
                                 <td>{{ $error->error_steps }}</td>
                                 <td>{{ $error->error_reporter }}</td>
                                 <td>{{ $error->created_at }}</td>
-                                  <form action="{{ url('') }}" method="post" enctype="multipart/form-data">
-                                    @csrf
-                                    <td><input type="submit" class="btn btn-rounded btn-outline-info" value="Make Tester"/></td>
-                                  </form>
+                                <td><a class="btn btn-rounded btn-outline-info" href="{{ url('/assignerror', $error->id) }}">Assign Error</a></td>
                                   <form action="{{ url('') }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <td><input type="submit" class="btn btn-rounded btn-outline-primary" value="Not Sure"/></td>
