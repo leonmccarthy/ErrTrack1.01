@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Assigned;
 use App\Models\Error;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -71,11 +72,20 @@ class AdminController extends Controller
         return view('admin.manage_errors.assign-error-view', compact('username', 'errorToBeAssigned', 'developer'));
     }
 
-    public function assignErrorViewTest(){
-        $usertype = Auth::user()->usertype;
-        $username = Auth::user()->name;
-        // $errorToBeAssigned = Error::find($id);
-        return view('admin.manage_errors.assign-error-view-test', compact('username'));
-    }
+        // report error action
+        public function assignErrorAction(Request $request){
+            $usertype = Auth::user()->usertype;
+            $username = Auth::user()->name;
+            $assignError = new Assigned();
+            $assignError->error_name  = $request->error_name;
+            $assignError->error_description  = $request->error_description;
+            $assignError->error_steps  = $request->error_steps;
+            $assignError->error_reporter  = $request->error_reporter;
+            $assignError->error_priority  = $request->error_priority;
+            $assignError->error_dev_assigned  = $request->error_dev_assigned;
+            $assignError->save();
+            
+            return view('admin.admin-home', compact('username'));
+        }
 
 }

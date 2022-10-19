@@ -38,12 +38,12 @@
                   <p class="card-description">
                     Please fill in the details below
                   </p>
-                  <form class="forms-sample" action="{{ url('/') }}" method="POST" enctype="multipart/form-data">
+                  <form class="forms-sample" action="{{ url('/assignerroraction') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     
                     <div class="form-group">
                         <label for="error_name">Error Title</label>
-                        <input type="text" class="form-control rounded-pill" name="error_name" id="error_name" value="{{ $errorToBeAssigned->error_name }}" required disabled>
+                        <input type="text" class="form-control rounded-pill" name="error_name" id="error_name" value="{{  $errorToBeAssigned->error_name }}" required disabled>
                       </div>
                       <div class="form-group">
                         <label for="error_description">Error Description</label>
@@ -60,7 +60,7 @@
                         <div class="form-group">
                           <label for="error_priority">Error Priority</label>
                             <select class="form-control rounded-pill" name="error_priority" id="error_priority" required>
-                                <option disabled>Priority</option>
+                                <option disabled selected>---Select Priority---</option>
                                 <option value="1">High</option>
                                 <option value="2">Medium</option>
                                 <option value="3">Low</option>
