@@ -30,6 +30,7 @@ Route::post('/makeadmin/{id}', [AdminController::class, 'makeAdmin']);
 Route::get('/deleteuser/{id}', [AdminController::class, 'deleteUser']);
 Route::get('/reporterror', [TesterController::class, 'reportErrorView']);
 Route::post('/reporterroraction', [TesterController::class, 'reportErrorAction']);
+Route::get('/viewallreportederrors', [AdminController::class, 'viewAllReportedErrors']);
 
 Route::middleware([
     'auth:sanctum',

@@ -34,12 +34,12 @@
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="assign-error">
               <i class="menu-icon mdi mdi-table"></i>
-              <span class="menu-title">Assign Error</span>
+              <span class="menu-title">Manage Errors</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Assign Error</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/viewallreportederrors') }}">View Reported Errors</a></li>
               </ul>
             </div>
           </li>

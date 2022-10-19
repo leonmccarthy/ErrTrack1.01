@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Error;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -51,5 +52,13 @@ class AdminController extends Controller
         $user = User::find($id);
         $user->delete($id);
         return redirect()->back();
+    }
+
+    // viewing all reported errors
+    public function viewAllReportedErrors(){
+        $usertype = Auth::user()->usertype;
+        $username = Auth::user()->name;
+        $allReportedErrors = Error::all();
+        return view('admin.manage_errors.view-all-reported-errors', compact('allReportedErrors', 'username'));
     }
 }
