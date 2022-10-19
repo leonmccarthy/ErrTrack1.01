@@ -38,7 +38,8 @@
                   <p class="card-description">
                     Please fill in the details below
                   </p>
-                  <form class="forms-sample">
+                  <form class="forms-sample" action="{{ url('/reporterroraction') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-group">
                       <label for="error_name">Error Title</label>
                       <input type="text" class="form-control rounded-pill" name="error_name" id="error_name" placeholder="Enter error title" required>
