@@ -40,6 +40,7 @@
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{ url('/viewallreportederrors') }}">View Reported Errors</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/viewallassignederrors') }}">View Assigned Errors</a></li>
               </ul>
             </div>
           </li>

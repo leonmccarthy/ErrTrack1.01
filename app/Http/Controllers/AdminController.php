@@ -73,14 +73,17 @@ class AdminController extends Controller
     }
 
         // report error action
-        public function assignErrorAction(Request $request){
+        public function assignErrorAction(Request $request, $id){
             $usertype = Auth::user()->usertype;
             $username = Auth::user()->name;
+            $errorReported = Error::find($id);
             $assignError = new Assigned();
-            $assignError->error_name  = $request->error_name;
-            $assignError->error_description  = $request->error_description;
-            $assignError->error_steps  = $request->error_steps;
-            $assignError->error_reporter  = $request->error_reporter;
+            $assignError->error_name  = $errorReported->error_name;
+            $assignError->error_description  = $errorReported->error_description;
+            $assignError->error_steps  = $errorReported->error_steps;
+            $assignError->error_reporter  = $errorReported->error_reporter;
+            $assignError->error_steps_done = 0 ;
+            $assignError->error_steps_to_complete = 0 ;
             $assignError->error_priority  = $request->error_priority;
             $assignError->error_dev_assigned  = $request->error_dev_assigned;
             $assignError->save();
@@ -88,4 +91,11 @@ class AdminController extends Controller
             return view('admin.admin-home', compact('username'));
         }
 
+        // viewing all assigned errors
+    public function viewAllAssignedErrors(){
+        $usertype = Auth::user()->usertype;
+        $username = Auth::user()->name;
+        $allAssignedErrors = Assigned::all();
+        return view('admin.manage_errors.view-all-assigned-errors', compact('allAssignedErrors', 'username'));
+    }
 }

@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Admin | Reported Errors </title>
+  <title>Admin | Assigned Errors </title>
   
   {{-- STYLESHEET --}}
   @include('admin.admin-stylesheet')
@@ -34,9 +34,9 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Reported Error Table</h4>
+                    <h4 class="card-title">Assigned Error Table</h4>
                     <p class="card-description">
-                      Table for <code>all errors reported and have not been assigned to a developer.</code>
+                      Table for <code>all errors assigned to a developer.</code>
                     </p>
                     <div class="table-responsive">
                       <table class="table">
@@ -46,20 +46,32 @@
                             <th>Error Description</th>
                             <th>Error Steps</th>
                             <th>Error Reporter</th>
-                            <th>Report Date</th>
+                            <th>Developer Assigned</th>
+                            <th>Priority</th>
+                            <th>Percentage Completed</th>
+                            <th>Assigned Date</th>
                             <th>Action 1</th>
                             <th>Action 2</th>
                           </tr>
                         </thead>
                         <tbody>
-                            @foreach ($allReportedErrors as $error)
+                            @foreach ($allAssignedErrors as $error)
                             <tr>
                                 <td>{{ $error->error_name }}</td>
                                 <td>{{ $error->error_description }}</td>
                                 <td>{{ $error->error_steps }}</td>
                                 <td>{{ $error->error_reporter }}</td>
+                                <td>{{ $error->error_dev_assigned }}</td>
+                                @if ($error->error_priority==="1")
+                                  <td>High</td>
+                                @elseif($error->error_priority==="2")
+                                  <td>Medium</td>
+                                @else
+                                  <td>Low</td>
+                                @endif
+                                <td>{{ round(($error->error_steps_done/$error->error_steps_to_complete)*100) }}%</td>
                                 <td>{{ $error->created_at }}</td>
-                                <td><a class="btn btn-rounded btn-outline-info" href="{{ url('/assignerror', $error->id) }}">Assign Error</a></td>
+                                <td><a class="btn btn-rounded btn-outline-info" href="{{ url('/assignerror', $error->id) }}">Edit Assigned  Error</a></td>
                                   <form action="{{ url('') }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <td><input type="submit" class="btn btn-rounded btn-outline-primary" value="Not Sure"/></td>

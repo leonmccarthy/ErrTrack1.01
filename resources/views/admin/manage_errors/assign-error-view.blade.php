@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Manage Users </title>
+  <title>Assign Error </title>
   
   {{-- STYLESHEET --}}
   @include('admin.admin-stylesheet')
@@ -38,7 +38,7 @@
                   <p class="card-description">
                     Please fill in the details below
                   </p>
-                  <form class="forms-sample" action="{{ url('/assignerroraction') }}" method="POST" enctype="multipart/form-data">
+                  <form class="forms-sample" action="{{ url('/assignerroraction', $errorToBeAssigned->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     
                     <div class="form-group">
@@ -60,9 +60,8 @@
                         <div class="form-group">
                           <label for="error_priority">Error Priority</label>
                             <select class="form-control rounded-pill" name="error_priority" id="error_priority" required>
-                                <option disabled selected>---Select Priority---</option>
                                 <option value="1">High</option>
-                                <option value="2">Medium</option>
+                                <option value="2" selected>Medium</option>
                                 <option value="3">Low</option>
                             </select>
                         </div>

@@ -32,7 +32,8 @@ Route::get('/reporterror', [TesterController::class, 'reportErrorView']);
 Route::post('/reporterroraction', [TesterController::class, 'reportErrorAction']);
 Route::get('/viewallreportederrors', [AdminController::class, 'viewAllReportedErrors']);
 Route::get('/assignerror/{id}', [AdminController::class, 'assignErrorView']);
-Route::post('/assignerroraction', [AdminController::class, 'assignErrorAction']);
+Route::post('/assignerroraction/{id}', [AdminController::class, 'assignErrorAction']);
+Route::get('/viewallassignederrors', [AdminController::class, 'viewAllAssignedErrors']);
 
 
 Route::middleware([
