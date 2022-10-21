@@ -69,7 +69,7 @@ class AdminController extends Controller
         $username = Auth::user()->name;
         $errorToBeAssigned = Error::find($id);
         $developer = User::where('usertype', '=', '49')->get();
-        return view('admin.manage_errors.assign-error-view', compact('username', 'errorToBeAssigned', 'developer'));
+        return view('admin.manage_errors.assign-error', compact('username', 'errorToBeAssigned', 'developer'));
     }
 
         // report error action
@@ -83,7 +83,7 @@ class AdminController extends Controller
             $assignError->error_steps  = $errorReported->error_steps;
             $assignError->error_reporter  = $errorReported->error_reporter;
             $assignError->error_steps_done = 0 ;
-            $assignError->error_steps_to_complete = 0 ;
+            $assignError->error_steps_to_complete = 1 ;
             $assignError->error_priority  = $request->error_priority;
             $assignError->error_dev_assigned  = $request->error_dev_assigned;
             $assignError->save();
@@ -97,5 +97,14 @@ class AdminController extends Controller
         $username = Auth::user()->name;
         $allAssignedErrors = Assigned::all();
         return view('admin.manage_errors.view-all-assigned-errors', compact('allAssignedErrors', 'username'));
+    }
+
+    // report error view
+    public function editAssignErrorView($id){
+        $usertype = Auth::user()->usertype;
+        $username = Auth::user()->name;
+        $assignedErrorToBeEdited = Assigned::find($id);
+        $developer = User::where('usertype', '=', '49')->get();
+        return view('admin.manage_errors.edit-assigned-error', compact('username', 'assignedErrorToBeEdited', 'developer'));
     }
 }

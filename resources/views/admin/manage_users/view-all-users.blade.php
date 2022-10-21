@@ -74,7 +74,7 @@
                                 @if ($user->usertype=='0' || $user->usertype=='99')
                                   <td><a href="#" class="btn btn-rounded btn-secondary" @disabled(true)>Make Tester</a></td>
                                 @else
-                                  <form action="{{ url('/maketester', $user->id) }}" method="post" enctype="multipart/form-data">
+                                  <form action="{{ url('/make-tester', $user->id) }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <td><input type="submit" class="btn btn-rounded btn-outline-primary" value="Make Tester"/></td>
                                   </form>
@@ -84,7 +84,7 @@
                                 @if ($user->usertype=='49' || $user->usertype=='99')
                                   <td><a href="#" class="btn btn-rounded btn-secondary " @disabled(true)>Make Developer</a></td>
                                 @else
-                                  <form action="{{ url('/makedeveloper', $user->id) }}" method="post" enctype="multipart/form-data">
+                                  <form action="{{ url('/make-developer', $user->id) }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <td><input type="submit" class="btn btn-rounded btn-outline-success" value="Make Developer"/></td>
                                   </form>
@@ -95,7 +95,7 @@
                                 @if ($user->usertype=='99')
                                   <td><a href="#" class="btn btn-rounded btn-secondary " @disabled(true)>Make Admin</a></td>
                                 @else
-                                  <form action="{{ url('/makeadmin', $user->id) }}" method="post" enctype="multipart/form-data">
+                                  <form action="{{ url('/make-admin', $user->id) }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <td><input type="submit" class="btn btn-rounded btn-outline-warning" value="Make Admin"></td>
                                   </form>
@@ -105,7 +105,7 @@
                                 @if ($user->usertype=='99')
                                   <td><a href="#" class="btn btn-rounded btn-secondary " @disabled(true)>Delete</a></td>
                                 @else
-                                  <td><a href="{{ url('/deleteuser', $user->id) }}" class="btn btn-rounded btn-danger">Delete</a></td>
+                                  <td><a href="{{ url('/delete-user', $user->id) }}" class="btn btn-rounded btn-danger">Delete</a></td>
                                 @endif
 
                                 <td>{{ $user->created_at }}</td>

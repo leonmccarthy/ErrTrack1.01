@@ -15,7 +15,7 @@
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="{{  url('/reporterror') }}">Report Error</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{  url('/report-error') }}">Report Error</a></li>
               </ul>
             </div>
           </li>

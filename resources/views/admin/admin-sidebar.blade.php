@@ -27,7 +27,7 @@
             </a>
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{ url('/viewallusers') }}">View All Users</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/view-all-users') }}">View All Users</a></li>
               </ul>
             </div>
           </li>
@@ -39,8 +39,8 @@
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{ url('/viewallreportederrors') }}">View Reported Errors</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ url('/viewallassignederrors') }}">View Assigned Errors</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/view-all-reported-errors') }}">View Reported Errors</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/view-all-assigned-errors') }}">View Assigned Errors</a></li>
               </ul>
             </div>
           </li>

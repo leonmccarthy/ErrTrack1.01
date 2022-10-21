@@ -38,7 +38,7 @@
                   <p class="card-description">
                     Please fill in the details below
                   </p>
-                  <form class="forms-sample" action="{{ url('/reporterroraction') }}" method="POST" enctype="multipart/form-data">
+                  <form class="forms-sample" action="{{ url('/report-error-action') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                       <label for="error_name">Error Title</label>

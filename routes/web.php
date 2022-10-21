@@ -23,18 +23,18 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, "index"]);
 Route::get("/redirect", [HomeController::class, "redirect"]);
 Route::get('/add-dev', [AdminController::class, 'addDeveloper']);
-Route::get('/viewallusers', [AdminController::class, 'viewAllUsers']);
-Route::post('/maketester/{id}', [AdminController::class, 'makeTester']);
-Route::post('/makedeveloper/{id}', [AdminController::class, 'makeDeveloper']);
-Route::post('/makeadmin/{id}', [AdminController::class, 'makeAdmin']);
-Route::get('/deleteuser/{id}', [AdminController::class, 'deleteUser']);
-Route::get('/reporterror', [TesterController::class, 'reportErrorView']);
-Route::post('/reporterroraction', [TesterController::class, 'reportErrorAction']);
-Route::get('/viewallreportederrors', [AdminController::class, 'viewAllReportedErrors']);
-Route::get('/assignerror/{id}', [AdminController::class, 'assignErrorView']);
-Route::post('/assignerroraction/{id}', [AdminController::class, 'assignErrorAction']);
-Route::get('/viewallassignederrors', [AdminController::class, 'viewAllAssignedErrors']);
-
+Route::get('/view-all-users', [AdminController::class, 'viewAllUsers']);
+Route::post('/make-tester/{id}', [AdminController::class, 'makeTester']);
+Route::post('/make-developer/{id}', [AdminController::class, 'makeDeveloper']);
+Route::post('/make-admin/{id}', [AdminController::class, 'makeAdmin']);
+Route::get('/delete-user/{id}', [AdminController::class, 'deleteUser']);
+Route::get('/report-error', [TesterController::class, 'reportErrorView']);
+Route::post('/report-error-action', [TesterController::class, 'reportErrorAction']);
+Route::get('/view-all-reported-errors', [AdminController::class, 'viewAllReportedErrors']);
+Route::get('/assign-error/{id}', [AdminController::class, 'assignErrorView']);
+Route::post('/assign-error-action/{id}', [AdminController::class, 'assignErrorAction']);
+Route::get('/view-all-assigned-errors', [AdminController::class, 'viewAllAssignedErrors']);
+Route::get('/edit-assigned-error/{id}', [AdminController::class, 'assignErrorView']);
 
 Route::middleware([
     'auth:sanctum',

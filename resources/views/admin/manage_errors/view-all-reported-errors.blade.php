@@ -59,7 +59,7 @@
                                 <td>{{ $error->error_steps }}</td>
                                 <td>{{ $error->error_reporter }}</td>
                                 <td>{{ $error->created_at }}</td>
-                                <td><a class="btn btn-rounded btn-outline-info" href="{{ url('/assignerror', $error->id) }}">Assign Error</a></td>
+                                <td><a class="btn btn-rounded btn-outline-info" href="{{ url('/assign-error', $error->id) }}">Assign Error</a></td>
                                   <form action="{{ url('') }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <td><input type="submit" class="btn btn-rounded btn-outline-primary" value="Not Sure"/></td>
