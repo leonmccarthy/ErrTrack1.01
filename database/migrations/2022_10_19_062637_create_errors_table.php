@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('error_description');
             $table->string('error_steps');
             $table->string('error_reporter');
+            $table->string('assignment_status')->default('0');
             $table->timestamps();
         });
     }
