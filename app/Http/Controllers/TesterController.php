@@ -22,6 +22,6 @@ class TesterController extends Controller
         $error->error_steps = $request->error_steps;
         $error->error_reporter = Auth::user()->email;
         $error->save();
-        return view('tester.error.report-error', compact('username'));
+        return view('tester.tester-home', compact('username'));
     }
 }

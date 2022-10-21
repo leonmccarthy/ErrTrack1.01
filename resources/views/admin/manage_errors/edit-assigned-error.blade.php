@@ -38,7 +38,7 @@
                   <p class="card-description">
                     Please fill in the details below
                   </p>
-                  <form class="forms-sample" action="{{ url('/', $assignedErrorToBeEdited->id) }}" method="POST" enctype="multipart/form-data">
+                  <form class="forms-sample" action="{{ url('/edit-assigned-error-action', $assignedErrorToBeEdited->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     
                     <div class="form-group">

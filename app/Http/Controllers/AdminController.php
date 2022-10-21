@@ -72,7 +72,7 @@ class AdminController extends Controller
         return view('admin.manage_errors.assign-error', compact('username', 'errorToBeAssigned', 'developer'));
     }
 
-        // report error action
+        // assign error action
         public function assignErrorAction(Request $request, $id){
             $usertype = Auth::user()->usertype;
             $username = Auth::user()->name;
@@ -88,7 +88,8 @@ class AdminController extends Controller
             $assignError->error_dev_assigned  = $request->error_dev_assigned;
             $assignError->save();
             
-            return view('admin.admin-home', compact('username'));
+            $allAssignedErrors = Assigned::all();
+            return view('admin.manage_errors.view-all-assigned-errors', compact('allAssignedErrors', 'username'));
         }
 
         // viewing all assigned errors
@@ -99,12 +100,35 @@ class AdminController extends Controller
         return view('admin.manage_errors.view-all-assigned-errors', compact('allAssignedErrors', 'username'));
     }
 
-    // report error view
-    public function editAssignErrorView($id){
+    // edit assign error view
+    public function editAssignedErrorView($id){
         $usertype = Auth::user()->usertype;
         $username = Auth::user()->name;
         $assignedErrorToBeEdited = Assigned::find($id);
         $developer = User::where('usertype', '=', '49')->get();
         return view('admin.manage_errors.edit-assigned-error', compact('username', 'assignedErrorToBeEdited', 'developer'));
+    }
+
+     // assign error action
+     public function editAssignedErrorAction($id, Request $request){
+        $usertype = Auth::user()->usertype;
+        $username = Auth::user()->name;
+        $assignedErrorToBeEdited = Assigned::find($id);
+        $allAssignedErrors = Assigned::all();
+        // $developer = User::where('usertype', '=', '49')->get();
+        if(!$request->error_priority){
+            $assignedErrorToBeEdited->error_priority = $assignedErrorToBeEdited->error_priority;
+        }else{
+            $assignedErrorToBeEdited->error_priority = $request->error_priority;
+        }
+        if(!$request->error_priority){
+            $assignedErrorToBeEdited->error_dev_assigned = $assignedErrorToBeEdited->error_dev_assigned;
+        }else{
+            $assignedErrorToBeEdited->error_dev_assigned = $request->error_dev_assigned;
+        }
+        $assignedErrorToBeEdited->error_dev_assigned = $request->error_dev_assigned;
+        $assignedErrorToBeEdited->save();
+
+        return view('admin.manage_errors.view-all-assigned-errors', compact('allAssignedErrors', 'username'));
     }
 }

@@ -34,7 +34,8 @@ Route::get('/view-all-reported-errors', [AdminController::class, 'viewAllReporte
 Route::get('/assign-error/{id}', [AdminController::class, 'assignErrorView']);
 Route::post('/assign-error-action/{id}', [AdminController::class, 'assignErrorAction']);
 Route::get('/view-all-assigned-errors', [AdminController::class, 'viewAllAssignedErrors']);
-Route::get('/edit-assigned-error/{id}', [AdminController::class, 'assignErrorView']);
+Route::get('/edit-assigned-error/{id}', [AdminController::class, 'editAssignedErrorView']);
+Route::post('/edit-assigned-error-action/{id}', [AdminController::class, 'editAssignedErrorAction']);
 
 Route::middleware([
     'auth:sanctum',
