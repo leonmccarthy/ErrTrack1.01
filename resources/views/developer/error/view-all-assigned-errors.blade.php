@@ -5,27 +5,27 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Admin | Assigned Errors </title>
+  <title>ErrTrack | Developer </title>
   
   {{-- STYLESHEET --}}
-  @include('admin.admin-stylesheet')
+  @include('developer.developer-stylesheet')
 </head>
 <body>
   <div class="container-scroller">
     
     {{-- TOP NAVBAR --}}
-    @include('admin.admin-topnavbar')
+    @include('developer.developer-topnavbar')
     <!-- partial -->
 
     {{-- CENTER BODY --}}
     <div class="container-fluid page-body-wrapper">
       
       {{-- THEME SETTING --}}
-      @include('admin.admin-themesetting')
+      @include('developer.developer-themesetting')
       <!-- partial -->
 
       {{-- SIDEBAR --}}
-      @include('admin.admin-sidebar')
+      @include('developer.developer-sidebar')
       <!-- partial -->
 
       <div class="main-panel">
@@ -56,7 +56,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                            @foreach ($allAssignedErrors as $error)
+                            @foreach ($assignedErrors as $error)
                             <tr>
                                 <td>{{ $error->error_name }}</td>
                                 <td>{{ $error->error_description }}</td>
@@ -94,7 +94,7 @@
         <!-- content-wrapper ends -->
 
         {{-- FOOTER --}}
-        @include('admin.admin-footer')
+        @include('developer.developer-footer')
         <!-- partial -->
 
       </div>
@@ -105,7 +105,7 @@
   <!-- container-scroller -->
 
   {{--  SCRIPTS --}}
-  @include('admin.admin-scripts')
+  @include('developer.developer-scripts')
   <!-- End custom js for this page-->
 </body>
 

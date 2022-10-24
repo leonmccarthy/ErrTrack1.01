@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DeveloperController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TesterController;
@@ -36,6 +37,8 @@ Route::post('/assign-error-action/{id}', [AdminController::class, 'assignErrorAc
 Route::get('/view-all-assigned-errors', [AdminController::class, 'viewAllAssignedErrors']);
 Route::get('/edit-assigned-error/{id}', [AdminController::class, 'editAssignedErrorView']);
 Route::post('/edit-assigned-error-action/{id}', [AdminController::class, 'editAssignedErrorAction']);
+Route::get('/dev-view-all-assigned-errors', [DeveloperController::class, 'viewAllAssignedErrors']);
+Route::get('/view-my-errors', [DeveloperController::class, 'viewMyAssignedErrors']);
 
 Route::middleware([
     'auth:sanctum',

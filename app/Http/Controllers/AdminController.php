@@ -86,6 +86,7 @@ class AdminController extends Controller
             $assignError->error_steps_to_complete = 1 ;
             $assignError->error_priority  = $request->error_priority;
             $assignError->error_dev_assigned  = $request->error_dev_assigned;
+            $assignError->error_assigner = $username;
             $assignError->save();
             $errorReported->assignment_status = "1";
             $errorReported->save();
