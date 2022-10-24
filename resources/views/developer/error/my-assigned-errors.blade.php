@@ -73,7 +73,7 @@
                                 @endif
                                 <td>{{ round(($error->error_steps_done/$error->error_steps_to_complete)*100) }}%</td>
                                 <td>{{ $error->created_at }}</td>
-                                <td><a class="btn btn-rounded btn-outline-info" href="{{ url('/edit-assigned-error', $error->id) }}">Edit Assigned  Error</a></td>
+                                <td><a class="btn btn-rounded btn-outline-info" href="{{ url('/manage-my-errors', $error->id) }}">Manage Error</a></td>
                                   <form action="{{ url('') }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <td><input type="submit" class="btn btn-rounded btn-outline-primary" value="Not Sure"/></td>

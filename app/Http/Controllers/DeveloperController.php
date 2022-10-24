@@ -23,4 +23,12 @@ class DeveloperController extends Controller
         $username = Auth::user()->name;
         return view('developer.error.my-assigned-errors', compact('username', 'assignedErrors'));
     }
+
+    public function manageErrorView($id){
+        $usertype = Auth::user()->usertype;
+        $username = Auth::user()->name;
+        $assignedErrorToBeEdited = Assigned::find($id);
+        return view('developer.error.manage-error', compact('username', 'assignedErrorToBeEdited'));
+
+    }
 }

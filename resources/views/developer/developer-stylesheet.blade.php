@@ -1,3 +1,4 @@
+<base href="/public">
 <!-- plugins:css -->
 <link rel="stylesheet" href="imports/admin/vendors/feather/feather.css">
 <link rel="stylesheet" href="imports/admin/vendors/mdi/css/materialdesignicons.min.css">
