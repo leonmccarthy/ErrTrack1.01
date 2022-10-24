@@ -47,6 +47,7 @@
                             <th>Error Steps</th>
                             <th>Error Reporter</th>
                             <th>Report Date</th>
+                            <th>AsSignment status</th>
                             <th>Action 1</th>
                             <th>Action 2</th>
                           </tr>
@@ -59,11 +60,22 @@
                                 <td>{{ $error->error_steps }}</td>
                                 <td>{{ $error->error_reporter }}</td>
                                 <td>{{ $error->created_at }}</td>
+                                <td>
+
+                                    {{-- TO DETERMINE THE BADGE COLOR FOR ASSIGNMENT STATUS --}}
+                                      @if ($error->assignment_status=='0')
+                                          <label class="badge badge-danger">Not Assigned</label>
+                                      @else
+                                          <label class="badge badge-success">Assigned</label>
+                                      
+                                      @endif
+                                  </td>
                                 <td><a class="btn btn-rounded btn-outline-info" href="{{ url('/assign-error', $error->id) }}">Assign Error</a></td>
                                   <form action="{{ url('') }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <td><input type="submit" class="btn btn-rounded btn-outline-primary" value="Not Sure"/></td>
                                   </form>
+                                  
                                 
 
                               </tr>

@@ -87,6 +87,8 @@ class AdminController extends Controller
             $assignError->error_priority  = $request->error_priority;
             $assignError->error_dev_assigned  = $request->error_dev_assigned;
             $assignError->save();
+            $errorReported->assignment_status = "1";
+            $errorReported->save();
             
             $allAssignedErrors = Assigned::all();
             return view('admin.manage_errors.view-all-assigned-errors', compact('allAssignedErrors', 'username'));
