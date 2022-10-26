@@ -82,7 +82,7 @@
                               </select>
                           </div>
                       <button type="submit" class="btn btn-outline-primary me-2 btn-rounded">Submit</button>
-                      <button class="btn btn-outline-danger btn-rounded">Cancel</button>
+                      <a class="btn btn-outline-danger btn-rounded" href="{{ url('/view-all-assigned-errors') }}">Cancel</a>
                     
                   </form>
                 </div>

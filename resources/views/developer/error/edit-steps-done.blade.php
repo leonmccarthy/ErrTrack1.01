@@ -80,7 +80,7 @@
                             <input type="number" class="form-control rounded-pill" name="error_steps_to_complete" id="error_steps_to_complete" value="{{ $assignedErrorToBeEdited->error_steps_to_complete }}" required disabled>
                         </div>
                       <button type="submit" class="btn btn-outline-primary me-2 btn-rounded">Submit</button>
-                      <button class="btn btn-outline-danger btn-rounded">Cancel</button>
+                      <a class="btn btn-outline-danger btn-rounded" href="{{ url('/view-my-errors') }}">Cancel</a>
                     
                   </form>
                 </div>
