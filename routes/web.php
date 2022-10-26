@@ -21,22 +21,31 @@ Route::get('/', function () {
     return view('home');
 });
 
+// HOME ROUTES
 Route::get('/home', [HomeController::class, "index"]);
 Route::get("/redirect", [HomeController::class, "redirect"]);
+
+// ADMIN ROUTES
 Route::get('/add-dev', [AdminController::class, 'addDeveloper']);
 Route::get('/view-all-users', [AdminController::class, 'viewAllUsers']);
 Route::post('/make-tester/{id}', [AdminController::class, 'makeTester']);
 Route::post('/make-developer/{id}', [AdminController::class, 'makeDeveloper']);
 Route::post('/make-admin/{id}', [AdminController::class, 'makeAdmin']);
 Route::get('/delete-user/{id}', [AdminController::class, 'deleteUser']);
-Route::get('/report-error', [TesterController::class, 'reportErrorView']);
-Route::post('/report-error-action', [TesterController::class, 'reportErrorAction']);
 Route::get('/view-all-reported-errors', [AdminController::class, 'viewAllReportedErrors']);
 Route::get('/assign-error/{id}', [AdminController::class, 'assignErrorView']);
 Route::post('/assign-error-action/{id}', [AdminController::class, 'assignErrorAction']);
 Route::get('/view-all-assigned-errors', [AdminController::class, 'viewAllAssignedErrors']);
 Route::get('/edit-assigned-error/{id}', [AdminController::class, 'editAssignedErrorView']);
 Route::post('/edit-assigned-error-action/{id}', [AdminController::class, 'editAssignedErrorAction']);
+
+// TESTER ROUTES
+Route::get('/report-error', [TesterController::class, 'reportErrorView']);
+Route::post('/report-error-action', [TesterController::class, 'reportErrorAction']);
+Route::get('/view-reported-errors', [TesterController::class, 'viewAllReportedErrors']);
+
+
+// DEVELOPER ROUTES
 Route::get('/dev-view-all-assigned-errors', [DeveloperController::class, 'viewAllAssignedErrors']);
 Route::get('/view-my-errors', [DeveloperController::class, 'viewMyAssignedErrors']);
 Route::get('/edit-steps-done/{id}', [DeveloperController::class, 'editStepsDoneView']);

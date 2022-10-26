@@ -5,27 +5,27 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Admin | Reported Errors </title>
+  <title>Tester | Reported Errors </title>
   
   {{-- STYLESHEET --}}
-  @include('admin.admin-stylesheet')
+  @include('tester.tester-stylesheet')
 </head>
 <body>
   <div class="container-scroller">
     
     {{-- TOP NAVBAR --}}
-    @include('admin.admin-topnavbar')
+    @include('tester.tester-topnavbar')
     <!-- partial -->
 
     {{-- CENTER BODY --}}
     <div class="container-fluid page-body-wrapper">
       
       {{-- THEME SETTING --}}
-      @include('admin.admin-themesetting')
+      @include('tester.tester-themesetting')
       <!-- partial -->
 
       {{-- SIDEBAR --}}
-      @include('admin.admin-sidebar')
+      @include('tester.tester-sidebar')
       <!-- partial -->
 
       <div class="main-panel">
@@ -48,7 +48,7 @@
                             <th>Error Reporter</th>
                             <th>Report Date</th>
                             <th>Assignment status</th>
-                            <th>Action 1</th>
+
                           </tr>
                         </thead>
                         <tbody>
@@ -67,9 +67,7 @@
                                       @else
                                           <label class="badge badge-success">Assigned</label>
                                       
-                                      @endif
-                                  </td>
-                                <td><a class="btn btn-rounded btn-outline-info" href="{{ url('/assign-error', $error->id) }}">Assign Error</a></td>                                  
+                                      @endif                             
                                 
                               </tr>
                             @endforeach
@@ -85,7 +83,7 @@
         <!-- content-wrapper ends -->
 
         {{-- FOOTER --}}
-        @include('admin.admin-footer')
+        @include('tester.tester-footer')
         <!-- partial -->
 
       </div>
@@ -96,7 +94,7 @@
   <!-- container-scroller -->
 
   {{--  SCRIPTS --}}
-  @include('admin.admin-scripts')
+  @include('tester.tester-scripts')
   <!-- End custom js for this page-->
 </body>
 

@@ -8,12 +8,14 @@ use Illuminate\Support\Facades\Auth;
 
 class TesterController extends Controller
 {
+    // report error view
     public function reportErrorView(){
         $username = Auth::user()->name;
         $usertype = Auth::user()->usertype;
         return view('tester.error.report-error', compact('username'));
     }
 
+    // report error action
     public function reportErrorAction(Request $request){
         $username = Auth::user()->name;
         $error = new Error();
@@ -24,4 +26,12 @@ class TesterController extends Controller
         $error->save();
         return view('tester.tester-home', compact('username'));
     }
+
+        // viewing all reported errors
+        public function viewAllReportedErrors(){
+            $usertype = Auth::user()->usertype;
+            $username = Auth::user()->name;
+            $allReportedErrors = Error::all();
+            return view('tester.error.view-all-reported-errors', compact('allReportedErrors', 'username'));
+        }
 }

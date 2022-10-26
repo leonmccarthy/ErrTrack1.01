@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Edit Assigned Error </title>
+  <title>Developer | Edit Total Completion Steps</title>
   
   {{-- STYLESHEET --}}
   @include('developer.developer-stylesheet')

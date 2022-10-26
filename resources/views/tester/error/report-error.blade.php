@@ -53,7 +53,7 @@
                       <input type="text" class="form-control rounded-pill" name="error_steps" id="error_steps" placeholder="Enter the steps taken to reach the error" required>
                     </div>
                     <button type="submit" class="btn btn-outline-primary me-2 btn-rounded">Submit</button>
-                    <button class="btn btn-outline-danger btn-rounded">Cancel</button>
+                    <a class="btn btn-outline-danger btn-rounded" href="{{ url("/redirect") }}">Cancel</a>
                   </form>
                 </div>
               </div>
