@@ -9,7 +9,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="add-developer">
-              <i class="menu-icon mdi mdi-card-text-outline"></i>
+              <i class="menu-icon  mdi mdi-plus"></i>
               <span class="menu-title">Report Error</span>
               <i class="menu-arrow"></i>
             </a>
@@ -21,21 +21,16 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="manage-developers">
-              <i class="menu-icon mdi mdi-chart-line"></i>
+              <i class="menu-icon  mdi mdi-biohazard "></i>
               <span class="menu-title">Error Report</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{ url('/view-reported-errors') }}">View Errors</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/view-reported-errors') }}">View Reported Errors</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('') }}">View Errors Status</a></li>
               </ul>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="http://bootstrapdash.com/demo/star-admin2-free/docs/documentation.html">
-              <i class="menu-icon mdi mdi-file-document"></i>
-              <span class="menu-title">Documentation</span>
-            </a>
           </li>
         </ul>
       </nav>
