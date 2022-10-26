@@ -49,10 +49,12 @@
                             <th>Developer Assigned</th>
                             <th>Error Assigner</th>
                             <th>Priority</th>
+                            <th>Error Steps Done</th>
+                            <th>Action 1</th>
+                            <th>Total Steps To Completion</th>
+                            <th>Action 2</th>
                             <th>Percentage Completed</th>
                             <th>Assigned Date</th>
-                            <th>Action 1</th>
-                            <th>Action 2</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -67,18 +69,16 @@
                                 @if ($error->error_priority==="1")
                                   <td><label class="badge badge-danger">High</label></td>
                                 @elseif($error->error_priority==="2")
-                                  <td><label class="badge badge-success">Medium</label></td>
+                                  <td><label class="badge badge-warning">Medium</label></td>
                                 @else
-                                  <td><label class="badge badge-primary">Low</label></td>
+                                  <td><label class="badge badge-success">Low</label></td>
                                 @endif
+                                <td>{{ $error->error_steps_done }}</td>
+                                <td><a class="btn btn-rounded btn-outline-info" href="{{ url('/edit-steps-done', $error->id) }}">Edit Steps Done</a></td>
+                                <td>{{ $error->error_steps_to_complete }}</td>
+                                <td><a class="btn btn-rounded btn-outline-primary" href="{{ url('/edit-steps-to-complete', $error->id) }}">Edit Completion Steps</a></td>
                                 <td>{{ round(($error->error_steps_done/$error->error_steps_to_complete)*100) }}%</td>
                                 <td>{{ $error->created_at }}</td>
-                                <td><a class="btn btn-rounded btn-outline-info" href="{{ url('/manage-my-errors', $error->id) }}">Manage Error</a></td>
-                                  <form action="{{ url('') }}" method="post" enctype="multipart/form-data">
-                                    @csrf
-                                    <td><input type="submit" class="btn btn-rounded btn-outline-primary" value="Not Sure"/></td>
-                                  </form>
-                                
 
                               </tr>
                             @endforeach

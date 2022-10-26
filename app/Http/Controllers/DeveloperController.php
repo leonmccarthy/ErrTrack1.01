@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class DeveloperController extends Controller
 {
-    //
+    //viewing all assigned errors
     public function viewAllAssignedErrors(){
         $assignedErrors = Assigned::all();
         $usertype = Auth::user()->usertype;
@@ -16,6 +16,7 @@ class DeveloperController extends Controller
         return view('developer.error.view-all-assigned-errors', compact('username', 'assignedErrors'));
     }
 
+    // viewing my assigned errors
     public function viewMyAssignedErrors(){
         $useremail = Auth::user()->email;
         $assignedErrors = Assigned::where('error_dev_assigned', '=', $useremail)->get();
@@ -24,11 +25,57 @@ class DeveloperController extends Controller
         return view('developer.error.my-assigned-errors', compact('username', 'assignedErrors'));
     }
 
-    public function manageErrorView($id){
+    // editing steps done view
+    public function editStepsDoneView($id){
         $usertype = Auth::user()->usertype;
         $username = Auth::user()->name;
         $assignedErrorToBeEdited = Assigned::find($id);
-        return view('developer.error.manage-error', compact('username', 'assignedErrorToBeEdited'));
+        return view('developer.error.edit-steps-done', compact('username', 'assignedErrorToBeEdited'));
 
+    }
+
+    // editing steps done action
+    public function editStepsDoneAction(Request $request, $id){
+        $usertype = Auth::user()->usertype;
+        $username = Auth::user()->name;
+        $useremail = Auth::user()->email;
+        $assignedErrorToBeEdited = Assigned::find($id);
+
+        if($request->error_steps_done=="" || $request->error_steps_done>$assignedErrorToBeEdited->error_steps_to_complete){
+            $assignedErrorToBeEdited->error_steps_done = $assignedErrorToBeEdited->error_steps_done;
+        }else{
+            $assignedErrorToBeEdited->error_steps_done = $request->error_steps_done;
+            
+        }
+        $assignedErrorToBeEdited->save();
+        $assignedErrors = Assigned::where('error_dev_assigned', '=', $useremail)->get();
+        return view('developer.error.my-assigned-errors', compact('username', 'assignedErrors'));
+    }
+
+    // editing steps to completion view
+    public function editStepsToCompletionView($id){
+        $usertype = Auth::user()->usertype;
+        $username = Auth::user()->name;
+        $assignedErrorToBeEdited = Assigned::find($id);
+        return view('developer.error.edit-steps-to-complete', compact('username', 'assignedErrorToBeEdited'));
+
+    }
+
+    // editing steps to completion action
+    public function editStepsToCompletionAction(Request $request, $id){
+        $usertype = Auth::user()->usertype;
+        $username = Auth::user()->name;
+        $useremail = Auth::user()->email;
+        $assignedErrorToBeEdited = Assigned::find($id);
+
+        if($request->error_steps_to_complete==""){
+            $assignedErrorToBeEdited->error_steps_to_complete = $assignedErrorToBeEdited->error_steps_to_complete;
+        }else{
+            $assignedErrorToBeEdited->error_steps_to_complete = $request->error_steps_to_complete;  
+        }
+
+        $assignedErrorToBeEdited->save();
+        $assignedErrors = Assigned::where('error_dev_assigned', '=', $useremail)->get();
+        return view('developer.error.my-assigned-errors', compact('username', 'assignedErrors'));
     }
 }

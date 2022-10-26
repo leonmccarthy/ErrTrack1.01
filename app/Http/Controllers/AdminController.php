@@ -117,7 +117,6 @@ class AdminController extends Controller
         $usertype = Auth::user()->usertype;
         $username = Auth::user()->name;
         $assignedErrorToBeEdited = Assigned::find($id);
-        $allAssignedErrors = Assigned::all();
         // $developer = User::where('usertype', '=', '49')->get();
         if(!$request->error_priority){
             $assignedErrorToBeEdited->error_priority = $assignedErrorToBeEdited->error_priority;
@@ -131,6 +130,7 @@ class AdminController extends Controller
         }
         $assignedErrorToBeEdited->error_dev_assigned = $request->error_dev_assigned;
         $assignedErrorToBeEdited->save();
+        $allAssignedErrors = Assigned::all();
 
         return view('admin.manage_errors.view-all-assigned-errors', compact('allAssignedErrors', 'username'));
     }

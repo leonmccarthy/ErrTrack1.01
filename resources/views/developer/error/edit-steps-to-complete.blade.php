@@ -38,7 +38,7 @@
                   <p class="card-description">
                     Please fill in the details below
                   </p>
-                  <form class="forms-sample" action="{{ url('/edit-assigned-error-action', $assignedErrorToBeEdited->id) }}" method="POST" enctype="multipart/form-data">
+                  <form class="forms-sample" action="{{ url('/edit-steps-to-complete-action', $assignedErrorToBeEdited->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     
                     <div class="form-group">
@@ -72,12 +72,12 @@
                             <input type="text" class="form-control rounded-pill" name="error_dev_assigned" id="error_dev_assigned" value="{{ $assignedErrorToBeEdited->error_dev_assigned }}" required disabled>
                         </div>
                         <div class="form-group">
-                            <label for="error_dev_assigned">Steps Done To Rectify Error</label>
-                            <input type="number" class="form-control rounded-pill" name="error_steps_done" id="error_dev_assigned" max="{{ $assignedErrorToBeEdited->error_steps_to_complete }}" min="0" required >
+                            <label for="error_steps_done">Steps Done To Rectify Error</label>
+                            <input type="number" class="form-control rounded-pill" name="error_steps_done" id="error_steps_done" value="{{ $assignedErrorToBeEdited->error_steps_done }}" min="0" required  disabled>
                         </div>
                         <div class="form-group">
-                            <label for="error_dev_assigned">Total Steps Required To Rectify Error</label>
-                            <input type="number" class="form-control rounded-pill" name="error_steps_to_complete" id="error_dev_assigned" min="0" required>
+                            <label for="error_steps_to_complete">Total Steps Required To Rectify Error</label>
+                            <input type="number" class="form-control rounded-pill" name="error_steps_to_complete" id="error_steps_to_complete" value="{{ $assignedErrorToBeEdited->error_steps_to_complete }}" min="1" required>
                         </div>
                       <button type="submit" class="btn btn-outline-primary me-2 btn-rounded">Submit</button>
                       <button class="btn btn-outline-danger btn-rounded">Cancel</button>
