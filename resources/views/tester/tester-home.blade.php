@@ -36,15 +36,15 @@
                 <div class="card text-center">
                   <div class="card-header text-muted">Reported Error</div>
                     <div class="card-body">
-                      <h5 class="card-title">Error title</h5>
+                      <h5 class="card-title mb-2">Error title</h5>
                       <p class="card-text">{{ $error->error_name }}</p>
-                      <h5 class="card-title mt-2">Error description</h5>
+                      <h5 class="card-title mt-2 mb-2">Error description</h5>
                       <p class="card-text">{{ $error->error_description }}</p>
                       <h5 class="card-title mt-2">Error Steps</h5>
                       <p class="card-text">{{ $error->error_steps }}</p>
-                      <h5 class="card-title mt-2">Reported by</h5>
+                      <h5 class="card-title mt-2 mb-2">Reported by</h5>
                       <p class="card-text">{{ $error->error_reporter }}</p>
-                      <h5 class="card-title mt-2">Assignment Status</h5>
+                      <h5 class="card-title mt-2 mb-2">Assignment Status</h5>
                       {{-- TO DETERMINE THE BADGE COLOR FOR ASSIGNMENT STATUS --}}
                       @if ($error->assignment_status=='0')
                         <label class="badge badge-danger">Not Assigned</label>
