@@ -38,6 +38,17 @@
                     <p class="card-description">
                       Table for <code>all errors assigned to a developer.</code>
                     </p>
+                    @if (session('message'))
+                      <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('message') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button>
+                      </div>
+                    @elseif (session('error'))
+                      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ session('error') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button>
+                      </div>
+                    @endif
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
@@ -73,11 +84,8 @@
                                 @endif
                                 <td>{{ round(($error->error_steps_done/$error->error_steps_to_complete)*100) }}%</td>
                                 <td>{{ $error->created_at }}</td>
-                                <td><a class="btn btn-rounded btn-outline-info" href="{{ url('/edit-assigned-error', $error->id) }}">Edit Assigned  Error</a></td>
-                                  <form action="{{ url('') }}" method="post" enctype="multipart/form-data">
-                                    @csrf
-                                    <td><input type="submit" class="btn btn-rounded btn-outline-primary" value="Not Sure"/></td>
-                                  </form>
+                                <td><a class="btn btn-rounded btn-outline-info" href="{{ url('/edit-assigned-error', $error->id) }}">Edit</a></td>
+                                <td><a class="btn btn-rounded btn-outline-danger" href="{{ url('/delete-assigned-error', $error->id) }}">Delete</a></td>
                                 
 
                               </tr>

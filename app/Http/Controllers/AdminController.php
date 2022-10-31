@@ -11,11 +11,6 @@ use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
     
-    public function addDeveloper(){
-        $usertype = Auth::user()->usertype;
-        $username = Auth::user()->name;
-        return view('admin.manage_users.add-dev', compact('username'));
-    }
 
     public function viewAllUsers(){
         $usertype = Auth::user()->usertype;
@@ -29,7 +24,7 @@ class AdminController extends Controller
         $user = User::find($id);
         $user->usertype = '0';
         $user->save();
-        return redirect()->back();
+        return redirect()->back()->with('message', 'User changed to tester successfully');
     }
 
     //converting a tester into a developer
@@ -37,7 +32,7 @@ class AdminController extends Controller
         $user = User::find($id);
         $user->usertype = '49';
         $user->save();
-        return redirect()->back();
+        return redirect()->back()->with('message', 'User changed to developer successfully');
     }
 
     //converting a tester or developer into admin
@@ -45,14 +40,14 @@ class AdminController extends Controller
         $user = User::find($id);
         $user->usertype = '99';
         $user->save();
-        return redirect()->back();
+        return redirect()->back()->with('message', 'User changed to admin successfully');
     }
 
     // deleting a user
     public function deleteUser($id){
         $user = User::find($id);
         $user->delete($id);
-        return redirect()->back();
+        return redirect()->back()->with('message', 'User deleted successfully');
     }
 
     // viewing all reported errors
@@ -77,25 +72,32 @@ class AdminController extends Controller
             $usertype = Auth::user()->usertype;
             $username = Auth::user()->name;
             $errorReported = Error::find($id);
-            $assignError = new Assigned();
-            $assignError->error_name  = $errorReported->error_name;
-            $assignError->error_description  = $errorReported->error_description;
-            $assignError->error_steps  = $errorReported->error_steps;
-            $assignError->error_reporter  = $errorReported->error_reporter;
-            $assignError->error_steps_done = 0 ;
-            $assignError->error_steps_to_complete = 1 ;
-            $assignError->error_priority  = $request->error_priority;
-            $assignError->error_dev_assigned  = $request->error_dev_assigned;
-            $assignError->error_assigner = $username;
-            $assignError->save();
-            $errorReported->assignment_status = "1";
-            $errorReported->save();
+
+            $find = Assigned::where('error_description', "=", $errorReported->error_description)->count();
+
+            if($find==0){
+                $assignError = new Assigned();
+                $assignError->error_name  = $errorReported->error_name;
+                $assignError->error_description  = $errorReported->error_description;
+                $assignError->error_steps  = $errorReported->error_steps;
+                $assignError->error_reporter  = $errorReported->error_reporter;
+                $assignError->error_steps_done = 0 ;
+                $assignError->error_steps_to_complete = 1 ;
+                $assignError->error_priority  = $request->error_priority;
+                $assignError->error_dev_assigned  = $request->error_dev_assigned;
+                $assignError->error_assigner = $username;
+                $assignError->save();
+                $errorReported->assignment_status = "1";
+                $errorReported->save();
+                
+                return redirect('/view-all-assigned-errors')->with('message', 'Successfully assigned the error!');
+            }else{
+                return redirect('/view-all-assigned-errors')->with('error', 'Error has been assigned already!');
+            }
             
-            $allAssignedErrors = Assigned::all();
-            return view('admin.manage_errors.view-all-assigned-errors', compact('allAssignedErrors', 'username'));
         }
 
-        // viewing all assigned errors
+    // viewing all assigned errors
     public function viewAllAssignedErrors(){
         $usertype = Auth::user()->usertype;
         $username = Auth::user()->name;
@@ -112,7 +114,7 @@ class AdminController extends Controller
         return view('admin.manage_errors.edit-assigned-error', compact('username', 'assignedErrorToBeEdited', 'developer'));
     }
 
-     // assign error action
+     // edit assign error action
      public function editAssignedErrorAction($id, Request $request){
         $usertype = Auth::user()->usertype;
         $username = Auth::user()->name;
@@ -120,18 +122,22 @@ class AdminController extends Controller
         // $developer = User::where('usertype', '=', '49')->get();
         if(!$request->error_priority){
             $assignedErrorToBeEdited->error_priority = $assignedErrorToBeEdited->error_priority;
+            return redirect('/view-all-assigned-errors')->with('error', 'Failed to save changes!');
         }else{
             $assignedErrorToBeEdited->error_priority = $request->error_priority;
-        }
-        if(!$request->error_priority){
-            $assignedErrorToBeEdited->error_dev_assigned = $assignedErrorToBeEdited->error_dev_assigned;
-        }else{
             $assignedErrorToBeEdited->error_dev_assigned = $request->error_dev_assigned;
+            $assignedErrorToBeEdited->save();
+            return redirect('/view-all-assigned-errors')->with('message', 'Successfully saved changes!');
         }
-        $assignedErrorToBeEdited->error_dev_assigned = $request->error_dev_assigned;
-        $assignedErrorToBeEdited->save();
-        $allAssignedErrors = Assigned::all();
-
-        return view('admin.manage_errors.view-all-assigned-errors', compact('allAssignedErrors', 'username'));
     }
+
+        //deleting assigned error
+        public function deleteAssignedErrorAction($id){
+            $usertype = Auth::user()->usertype;
+            $username = Auth::user()->name;
+            $assignedErrorToBeEdited = Assigned::find($id);
+
+            $assignedErrorToBeEdited->delete($id);
+            return redirect()->back()->with('message', 'Successfully deleted the assigned error!');
+        }
 }

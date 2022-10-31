@@ -51,8 +51,6 @@
                             <th>Priority</th>
                             <th>Percentage Completed</th>
                             <th>Assigned Date</th>
-                            <th>Action 1</th>
-                            <th>Action 2</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -73,12 +71,6 @@
                                 @endif
                                 <td>{{ round(($error->error_steps_done/$error->error_steps_to_complete)*100) }}%</td>
                                 <td>{{ $error->created_at }}</td>
-                                <td><a class="btn btn-rounded btn-outline-info" href="{{ url('/edit-assigned-error', $error->id) }}">Edit Assigned  Error</a></td>
-                                  <form action="{{ url('') }}" method="post" enctype="multipart/form-data">
-                                    @csrf
-                                    <td><input type="submit" class="btn btn-rounded btn-outline-primary" value="Not Sure"/></td>
-                                  </form>
-                                
 
                               </tr>
                             @endforeach

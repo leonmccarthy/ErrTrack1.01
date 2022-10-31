@@ -43,13 +43,12 @@ class DeveloperController extends Controller
 
         if($request->error_steps_done=="" || $request->error_steps_done>$assignedErrorToBeEdited->error_steps_to_complete){
             $assignedErrorToBeEdited->error_steps_done = $assignedErrorToBeEdited->error_steps_done;
+            return redirect('/view-my-errors')->with('error', "Failed to save! Steps done cannot be greater than total steps!");
         }else{
             $assignedErrorToBeEdited->error_steps_done = $request->error_steps_done;
-            
+            $assignedErrorToBeEdited->save();
+            return redirect('/view-my-errors')->with('message', "Steps done changed successfully!");
         }
-        $assignedErrorToBeEdited->save();
-        $assignedErrors = Assigned::where('error_dev_assigned', '=', $useremail)->get();
-        return view('developer.error.my-assigned-errors', compact('username', 'assignedErrors'));
     }
 
     // editing steps to completion view
@@ -70,12 +69,11 @@ class DeveloperController extends Controller
 
         if($request->error_steps_to_complete==""){
             $assignedErrorToBeEdited->error_steps_to_complete = $assignedErrorToBeEdited->error_steps_to_complete;
+            return redirect('/view-my-errors')->with('error', "Failed to save!");
         }else{
-            $assignedErrorToBeEdited->error_steps_to_complete = $request->error_steps_to_complete;  
+            $assignedErrorToBeEdited->error_steps_to_complete = $request->error_steps_to_complete;
+            $assignedErrorToBeEdited->save();
+            return redirect('/view-my-errors')->with('message', "Total steps changed successfully!");  
         }
-
-        $assignedErrorToBeEdited->save();
-        $assignedErrors = Assigned::where('error_dev_assigned', '=', $useremail)->get();
-        return view('developer.error.my-assigned-errors', compact('username', 'assignedErrors'));
     }
 }

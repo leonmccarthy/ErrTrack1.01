@@ -38,6 +38,8 @@ Route::post('/assign-error-action/{id}', [AdminController::class, 'assignErrorAc
 Route::get('/view-all-assigned-errors', [AdminController::class, 'viewAllAssignedErrors']);
 Route::get('/edit-assigned-error/{id}', [AdminController::class, 'editAssignedErrorView']);
 Route::post('/edit-assigned-error-action/{id}', [AdminController::class, 'editAssignedErrorAction']);
+Route::get('/delete-assigned-error/{id}', [AdminController::class, 'deleteAssignedErrorAction']);
+
 
 // TESTER ROUTES
 Route::get('/report-error', [TesterController::class, 'reportErrorView']);

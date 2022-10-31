@@ -18,15 +18,21 @@ class TesterController extends Controller
     // report error action
     public function reportErrorAction(Request $request){
         $username = Auth::user()->name;
-        $error = new Error();
-        $error->error_name = $request->error_name;
-        $error->error_description = $request->error_description;
-        $error->error_steps = $request->error_steps;
-        $error->error_reporter = Auth::user()->email;
-        $error->save();
+        $find = Error::where("error_description", "=", $request->error_description)->count();
+
+        if ($find==0){
+            $error = new Error();
+            $error->error_name = $request->error_name;
+            $error->error_description = $request->error_description;
+            $error->error_steps = $request->error_steps;
+            $error->error_reporter = Auth::user()->email;
+            $error->save();
+
+            return redirect("/view-reported-errors")->with("message", "Successfully reported an error!");
+        }else{
+            return redirect("/view-reported-errors")->with("error", "Failed to save! Error description already exists!");
+        }
         
-        $allReportedErrors = Error::all();
-        return view('tester.error.view-all-reported-errors', compact('allReportedErrors', 'username'));
     }
 
         // viewing all reported errors
