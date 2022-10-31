@@ -28,7 +28,7 @@
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{ url('/view-reported-errors') }}">View Reported Errors</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ url('') }}">View Errors Status</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('') }}">View Assigned Errors</a></li>
               </ul>
             </div>
           </li>
