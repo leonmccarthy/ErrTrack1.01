@@ -59,10 +59,11 @@
                       @endif
                       
                       <h5 class="card-title mt-1 mb-2">Completion Status</h5>
-                      <p class="card-text">{{ round(($error->error_steps_done/$error->error_steps_to_complete)*100) }}%</p>
-  
+                      <div class="progress" style="height: 20px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{ round(($error->error_steps_done/$error->error_steps_to_complete)*100) }}%" aria-valuenow="{{ round(($error->error_steps_done/$error->error_steps_to_complete)*100) }}%" aria-valuemin="0" aria-valuemax="100">{{ round(($error->error_steps_done/$error->error_steps_to_complete)*100) }}%</div>
+                      </div>
                       <p></p>
-                      <a href="{{ url('/view-all-assigned-errors') }}" class="btn btn-primary mt-2">View in Table</a>
+                      <a href="{{ url('/dev-view-all-assigned-errors') }}" class="btn btn-primary mt-2">View in Table</a>
                     </div>
                     <div class="card-footer text-muted">
                       Assigned Date: {{ $error->created_at }}
