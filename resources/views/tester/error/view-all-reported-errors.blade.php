@@ -36,7 +36,7 @@
                   <div class="card-body">
                     <h4 class="card-title">Reported Error Table</h4>
                     <p class="card-description">
-                      Table for <code>all errors reported and have not been assigned to a developer.</code>
+                      Table for <code>all errors reported.</code>
                     </p>
                     @if (session('message'))
                       <div class="alert alert-success alert-dismissible fade show" role="alert">
