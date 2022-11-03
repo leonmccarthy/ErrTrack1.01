@@ -12,32 +12,28 @@
         </div>
         <div class="col-xxl-9">
           <div class="row flex-center g-0">
-            <div class="col-sm-6 col-lg-3 text-center">
-              <div class="wrapper shadow-square-right"><img class="team-card-1" src="imports/user/assets/img/gallery/john.png" width="200" alt="..." /></div>
-              <h5 class="text-800 fw-bold mt-4 mb-1">John Adams</h5>
-              <p>Ceo</p>
-            </div>
-            <div class="col-sm-6 col-lg-3 text-center">
-              <div class="wrapper shadow-square-left"><img class="team-card-2" src="imports/user/assets/img/gallery/carrey.png" width="200" alt="..." /></div>
-              <h5 class="text-800 fw-bold mt-4 mb-1">Carrey Johnson</h5>
-              <p>Senior Developer</p>
-            </div>
-            <div class="col-sm-6 col-lg-3 text-center">
-              <div class="wrapper shadow-square-right"><img class="team-card-3" src="imports/user/assets/img/gallery/ray.png" width="200" alt="..." /></div>
-              <h5 class="text-800 fw-bold mt-4 mb-1">Ray Marie</h5>
-              <p>Developer</p>
-            </div>
-            <div class="col-sm-6 col-lg-3 text-center">
-              <div class="wrapper shadow-square-left"><img class="team-card-4" src="imports/user/assets/img/gallery/austin.png" width="200" alt="..." /></div>
-              <h5 class="text-800 fw-bold mt-4 mb-1">Austin Min</h5>
-              <p>Designer</p>
-            </div>
+            @foreach ($admin as $admin)
+              <div class="col-sm-6 col-lg-3 text-center">
+                <div class="wrapper shadow-square-right"><img class="team-card-1" src="imports/user/assets/img/gallery/john.png" width="200" alt="..." /></div>
+                <h5 class="text-800 fw-bold mt-4 mb-1">{{ $admin->name }}</h5>
+                <p>Administrator</p>
+              </div>
+            @endforeach
+            @foreach ($developer as $developer)
+              <div class="col-sm-6 col-lg-3 text-center">
+                <div class="wrapper shadow-square-right"><img class="team-card-1" src="imports/user/assets/img/gallery/john.png" width="200" alt="..." /></div>
+                <h5 class="text-800 fw-bold mt-4 mb-1">{{ $developer->name }}</h5>
+                <p>Developer</p>
+              </div>
+            @endforeach
+            @foreach ($tester as $tester)
+              <div class="col-sm-6 col-lg-3 text-center">
+                <div class="wrapper shadow-square-right"><img class="team-card-1" src="imports/user/assets/img/gallery/john.png" width="200" alt="..." /></div>
+                <h5 class="text-800 fw-bold mt-4 mb-1">{{ $tester->name }}</h5>
+                <p>Tester</p>
+              </div>
+            @endforeach
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-auto mx-auto mb-8">
-          <button class="btn btn-lg btn-klean-outline order-0" type="submit"><span class="text-gradient fw-bold">View Full Team        </span></button>
         </div>
       </div>
     </div>

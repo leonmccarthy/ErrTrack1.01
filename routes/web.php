@@ -17,13 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, "index"]);
 
 // HOME ROUTES
 Route::get('/home', [HomeController::class, "index"]);
-Route::get("/redirect", [HomeController::class, "redirect"]);
+Route::get("/redirect", [HomeController::class, "redirect"])->name('redirect');
 
 // ADMIN ROUTES
 Route::get('/add-dev', [AdminController::class, 'addDeveloper']);

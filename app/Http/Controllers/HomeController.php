@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Assigned;
 use App\Models\Error;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,7 +12,10 @@ class HomeController extends Controller
 {
 
     public function index(){
-        return view("home");
+        $admin = User::where('usertype', '=', '99')->get();
+        $developer = User::where('usertype', '=', '49')->get();
+        $tester = User::where('usertype', '=', '0')->get();
+        return view("home", compact('admin', 'developer', 'tester'));
     }
     public function redirect(){
         $usertype = Auth::user()->usertype;

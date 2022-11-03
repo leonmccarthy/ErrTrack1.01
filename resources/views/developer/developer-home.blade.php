@@ -53,9 +53,9 @@
                       @if ($error->error_priority==="1")
                         <label class="badge badge-danger">High</label>
                       @elseif($error->error_priority==="2")
-                        <label class="badge badge-success">Medium</label>
+                        <label class="badge badge-warning">Medium</label>
                       @else
-                        <label class="badge badge-primary">Low</label>
+                        <label class="badge badge-success">Low</label>
                       @endif
                       
                       <h5 class="card-title mt-1 mb-2">Completion Status</h5>
