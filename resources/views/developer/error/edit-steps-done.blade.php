@@ -42,8 +42,8 @@
                     @csrf
                     
                     <div class="form-group">
-                        <label for="error_name">Error Title</label>
-                        <input type="text" class="form-control rounded-pill" name="error_name" id="error_name" value="{{  $assignedErrorToBeEdited->error_name }}" required disabled>
+                        <label for="project_name">Project</label>
+                        <input type="text" class="form-control rounded-pill" name="project_name" id="project_name" value="{{  $assignedErrorToBeEdited->project_name }}" required disabled>
                       </div>
                       <div class="form-group">
                         <label for="error_description">Error Description</label>

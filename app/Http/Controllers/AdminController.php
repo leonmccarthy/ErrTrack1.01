@@ -161,7 +161,7 @@ class AdminController extends Controller
         
                     if($find==0){
                         $assignError = new Assigned();
-                        $assignError->error_name  = $errorReported->error_name;
+                        $assignError->project_name  = $errorReported->project_name;
                         $assignError->error_description  = $errorReported->error_description;
                         $assignError->error_steps  = $errorReported->error_steps;
                         $assignError->error_reporter  = $errorReported->error_reporter;

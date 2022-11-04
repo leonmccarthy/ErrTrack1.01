@@ -41,8 +41,8 @@
                   <form class="forms-sample" action="{{ url('/report-error-action') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                      <label for="error_name">Error Title</label>
-                      <input type="text" class="form-control rounded-pill" name="error_name" id="error_name" placeholder="Enter error title" required>
+                      <label for="project_name">Project Name</label>
+                      <input type="text" class="form-control rounded-pill" name="project_name" id="project_name" placeholder="Enter project name" required>
                     </div>
                     <div class="form-group">
                       <label for="error_description">Error Description</label>

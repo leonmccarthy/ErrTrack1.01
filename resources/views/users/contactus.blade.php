@@ -1,4 +1,7 @@
 <section class="py-0" id="contact">
+    <div class="bg-holder" style="background-image:url(imports/user/assets/img/illustrations/feature-bg.png);background-position:right;background-size:auto;">
+    </div>
+    <!--/.bg-holder-->
 
     <div class="container">
       <div class="row">

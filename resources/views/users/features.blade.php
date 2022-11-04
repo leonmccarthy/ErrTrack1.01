@@ -16,8 +16,8 @@
             <div class="icon-wrapper shadow-danger">
               <div class="icon icon-danger"><span data-feather="mail"></span></div>
             </div>
-            <h5 class="mt-3 fw-bold">Encrypted Mail</h5>
-            <p class="mb-md-0 px-xxl-6">A process of encrypting email communications</p>
+            <h5 class="mt-3 fw-bold">Report Error/Issue</h5>
+            <p class="mb-md-0 px-xxl-6">Enables the testers to report an error encountered during testing</p>
           </div>
         </div>
         <div class="col-md-4 mb-6">
@@ -25,8 +25,8 @@
             <div class="icon-wrapper shadow-primary">
               <div class="icon icon-primary"><span data-feather="monitor"></span></div>
             </div>
-            <h5 class="mt-3 fw-bold">Display Sharing</h5>
-            <p class="mb-md-0 px-xxl-6">With other participants, you may share your screen</p>
+            <h5 class="mt-3 fw-bold">Ticket Issuing</h5>
+            <p class="mb-md-0 px-xxl-6">Adminstrators get to assign the error/issue to a developer</p>
           </div>
         </div>
         <div class="col-md-4 mb-6">
@@ -34,8 +34,8 @@
             <div class="icon-wrapper shadow-warning">
               <div class="icon icon-warning"><span data-feather="book"></span></div>
             </div>
-            <h5 class="mt-3 fw-bold">Private Notebook</h5>
-            <p class="mb-md-0 px-xxl-6">Private Notebook is an application that is protected</p>
+            <h5 class="mt-3 fw-bold">Progress Tracking</h5>
+            <p class="mb-md-0 px-xxl-6">All users of the system get to view the state & progress of the error/issue</p>
           </div>
         </div>
         <div class="col-md-4 mb-6">
@@ -43,8 +43,8 @@
             <div class="icon-wrapper shadow-success">
               <div class="icon icon-success"><span data-feather="tablet"></span></div>
             </div>
-            <h5 class="mt-3 fw-bold">App App Assistance</h5>
-            <p class="mb-md-0 px-xxl-6">App Assistant is quickly and effectively ran the system</p>
+            <h5 class="mt-3 fw-bold">Role Assigning</h5>
+            <p class="mb-md-0 px-xxl-6">Administrative priviledges of administrators to assign roles as soon as possible</p>
           </div>
         </div>
         <div class="col-md-4 mb-6">
@@ -52,8 +52,8 @@
             <div class="icon-wrapper shadow-secondary">
               <div class="icon icon-secondary"><span data-feather="printer"></span></div>
             </div>
-            <h5 class="mt-3 fw-bold">Multiple Printing</h5>
-            <p class="mb-md-0 px-xxl-6">Our canvas prints are crafted on top-notch canvas.</p>
+            <h5 class="mt-3 fw-bold">Remote Tasking</h5>
+            <p class="mb-md-0 px-xxl-6">All users get to use the system at their own location of convinience</p>
           </div>
         </div>
         <div class="col-md-4 mb-6">
@@ -61,8 +61,17 @@
             <div class="icon-wrapper shadow-info">
               <div class="icon icon-info"><span data-feather="edit-2"></span></div>
             </div>
-            <h5 class="mt-3 fw-bold">Free Sketch</h5>
-            <p class="mb-md-0 px-xxl-6">Our canvas prints are crafted on top-notch canvas.</p>
+            <h5 class="mt-3 fw-bold">Workflow Customization</h5>
+            <p class="mb-md-0 px-xxl-6">Every error/issue ticket closed can be reopened & vice-versa </p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-6">
+          <div class="text-center px-lg-3">
+            <div class="icon-wrapper shadow-info">
+              <div class="icon icon-info"><span data-feather="edit-2"></span></div>
+            </div>
+            <h5 class="mt-3 fw-bold">Inter-Operability</h5>
+            <p class="mb-md-0 px-xxl-6">Can work on any Operrating System as long as there is a browser</p>
           </div>
         </div>
       </div>

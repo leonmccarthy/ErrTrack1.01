@@ -36,7 +36,7 @@ class TesterController extends Controller
 
                 if ($find==0){
                     $error = new Error();
-                    $error->error_name = $request->error_name;
+                    $error->project_name = $request->project_name;
                     $error->error_description = $request->error_description;
                     $error->error_steps = $request->error_steps;
                     $error->error_reporter = Auth::user()->email;

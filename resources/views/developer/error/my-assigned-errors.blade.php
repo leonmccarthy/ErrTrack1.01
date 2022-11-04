@@ -53,7 +53,7 @@
                       <table class="table">
                         <thead>
                           <tr>
-                            <th>Error Title</th>
+                            <th>Project Name</th>
                             <th>Error Description</th>
                             <th>Error Steps</th>
                             <th>Error Reporter</th>
@@ -71,7 +71,7 @@
                         <tbody>
                             @foreach ($assignedErrors as $error)
                             <tr>
-                                <td>{{ $error->error_name }}</td>
+                                <td>{{ $error->project_name }}</td>
                                 <td>{{ $error->error_description }}</td>
                                 <td>{{ $error->error_steps }}</td>
                                 <td>{{ $error->error_reporter }}</td>

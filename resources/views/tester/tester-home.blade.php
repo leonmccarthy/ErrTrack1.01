@@ -36,8 +36,8 @@
                 <div class="card text-center">
                   <div class="card-header text-muted">Reported Error</div>
                     <div class="card-body">
-                      <h5 class="card-title mb-2">Error title</h5>
-                      <p class="card-text">{{ $error->error_name }}</p>
+                      <h5 class="card-title mb-2">Project Name</h5>
+                      <p class="card-text">{{ $error->project_name }}</p>
                       <h5 class="card-title mt-2 mb-2">Error description</h5>
                       <p class="card-text">{{ $error->error_description }}</p>
                       <h5 class="card-title mt-2">Error Steps</h5>

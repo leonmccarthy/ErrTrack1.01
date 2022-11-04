@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('assigneds', function (Blueprint $table) {
             $table->id();
-            $table->string('error_name');
+            $table->string('project_name');
             $table->string('error_description');
             $table->string('error_steps');
             $table->string('error_reporter');

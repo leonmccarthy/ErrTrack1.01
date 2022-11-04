@@ -3,8 +3,6 @@
 namespace App\Actions\Fortify;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
@@ -33,17 +31,6 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
         ])->validateWithBag('updateProfileInformation');
 
 
-        // $request = request();
-        // if(isset($input['my_photo'])){
-        //     $previous_photo = Auth::user()->my_photo;
-        //     // GETTING IMAGE NAME AND MOVING FILE
-            
-        //     $photo = $input['my_photo'];
-        //     $photoname = time().".".$photo->getClientOriginalExtension();
-        //     $photo->move("userPhotos", $photoname);
-        // }else{
-        //     $photoname = Auth::user()->my_photo;
-        // }
         
         if(isset($input['my_photo'])){
             $user->updateMyPhoto($input['my_photo']);
@@ -61,12 +48,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $user->forceFill([
                 'name' => $input['name'],
                 'email' => $input['email'],
-                // 'my_photo' => $photoname,
             ])->save();
-            // if(isset($input['my_photo'])){
-            //     Storage::disk('public')->delete("/{{ $previous_photo }}");
-            // }
-            
         }
     }
 
