@@ -39,16 +39,29 @@
         </div>
         <!--/.bg-holder-->
 
+            @if (session('message'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  {{ session('message') }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button>
+                </div>
+            @endif
+
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-7 col-lg-6 py-6 text-sm-start text-center">
               <h1 class="fw-bold display-4 fs-4 fs-lg-6 fs-xxl-7 text-gradient"> Bootstrap 5 theme</h1>
               <h1 class="text-700">crafted by <span class="fw-bold">ThemeWagon</span></h1>
-              <p class="mb-5 fs-0">ThemeWagon offers an wide array of category-oriented <br class="d-none d-lg-block" />Free and Premium Bootstrap HTML Templates and Themes.</p><a class="btn hover-top btn-glow btn-klean" href="#">Check Demo</a>
+              <p class="mb-5 fs-0">ThemeWagon offers an wide array of category-oriented <br class="d-none d-lg-block" />Free and Premium Bootstrap HTML Templates and Themes.</p>
+              
             </div>
           </div>
         </div>
       </section>
+
+      <!-- ============================================-->
+
+      {{-- FEATURES --}}
+      @include('users.unassignedroleusers')
 
 
       <!-- ============================================-->
