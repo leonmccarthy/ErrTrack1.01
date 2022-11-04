@@ -72,13 +72,15 @@
                                         <label class="badge badge-success">Developer</label>
                                     @elseif($user->usertype=='99')
                                         <label class="badge badge-warning">Admin</label>
+                                    @elseif($user->usertype=='1')
+                                        <label class="badge badge-info">Unassigned Role</label>
                                     @endif
                                 </td>
 
                                 {{-- TO DETERMINE IF THE BUTTON IS TO BE DISABLED OR NOT DEPENDING ON ROLE --}}
                                 {{-- TESTER --}}
                                 @if ($user->usertype=='0' || $user->usertype=='99')
-                                  <td><a href="#" class="btn btn-rounded btn-secondary" @disabled(true)>Make Tester</a></td>
+                                  <td><p class="btn btn-rounded btn-secondary">Make Tester</p></td>
                                 @else
                                   <form action="{{ url('/make-tester', $user->id) }}" method="post" enctype="multipart/form-data">
                                     @csrf
@@ -88,7 +90,7 @@
 
                                 {{-- DEVELOPER --}}
                                 @if ($user->usertype=='49' || $user->usertype=='99')
-                                  <td><a href="#" class="btn btn-rounded btn-secondary " @disabled(true)>Make Developer</a></td>
+                                  <td><p class="btn btn-rounded btn-secondary ">Make Developer</p></td>
                                 @else
                                   <form action="{{ url('/make-developer', $user->id) }}" method="post" enctype="multipart/form-data">
                                     @csrf
@@ -99,7 +101,7 @@
 
                                 {{-- ADMIN --}}
                                 @if ($user->usertype=='99')
-                                  <td><a href="#" class="btn btn-rounded btn-secondary " @disabled(true)>Make Admin</a></td>
+                                  <td><p class="btn btn-rounded btn-secondary">Make Admin</p></td>
                                 @else
                                   <form action="{{ url('/make-admin', $user->id) }}" method="post" enctype="multipart/form-data">
                                     @csrf
@@ -109,7 +111,7 @@
 
                                 {{-- DELETING USER --}}
                                 @if ($user->usertype=='99')
-                                  <td><a href="#" class="btn btn-rounded btn-secondary " @disabled(true)>Delete</a></td>
+                                  <td><p class="btn btn-rounded btn-secondary ">Delete</p></td>
                                 @else
                                   <td><a href="{{ url('/delete-user', $user->id) }}" class="btn btn-rounded btn-danger">Delete</a></td>
                                 @endif

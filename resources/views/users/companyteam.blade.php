@@ -14,21 +14,21 @@
           <div class="row flex-center g-0">
             @foreach ($admin as $admin)
               <div class="col-sm-6 col-lg-3 text-center">
-                <div class="wrapper shadow-square-right"><img class="team-card-1" src="imports/user/assets/img/gallery/john.png" width="200" alt="..." /></div>
+                <div class="wrapper shadow-square-right"><img class="team-card-1" src="storage/{{ $admin->my_photo }}" width="200" height="305" alt="..." /></div>
                 <h5 class="text-800 fw-bold mt-4 mb-1">{{ $admin->name }}</h5>
                 <p>Administrator</p>
               </div>
             @endforeach
             @foreach ($developer as $developer)
               <div class="col-sm-6 col-lg-3 text-center">
-                <div class="wrapper shadow-square-right"><img class="team-card-1" src="imports/user/assets/img/gallery/john.png" width="200" alt="..." /></div>
+                <div class="wrapper shadow-square-right"><img class="team-card-1" src="storage/{{ $developer->my_photo }}" width="200" height="305" alt="..." /></div>
                 <h5 class="text-800 fw-bold mt-4 mb-1">{{ $developer->name }}</h5>
                 <p>Developer</p>
               </div>
             @endforeach
             @foreach ($tester as $tester)
               <div class="col-sm-6 col-lg-3 text-center">
-                <div class="wrapper shadow-square-right"><img class="team-card-1" src="{{ $tester->my_photo }}" width="200" height="305" alt="..." /></div>
+                <div class="wrapper shadow-square-right"><img class="team-card-1" src="storage/{{ $tester->my_photo }}" width="200" height="305" alt="..." /></div>
                 <h5 class="text-800 fw-bold mt-4 mb-1">{{ $tester->name }}</h5>
                 <p>Tester</p>
               </div>

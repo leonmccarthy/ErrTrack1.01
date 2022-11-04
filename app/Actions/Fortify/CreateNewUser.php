@@ -23,12 +23,12 @@ class CreateNewUser implements CreatesNewUsers
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'my_photo' => ['required', 'image','mimes:jpg,png,jpeg,gif,svg','max:2048','dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000'],
+            'my_photo' => ['required', 'image','mimes:jpg,png,jpeg','max:2048','dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000'],
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ],[
             'my_photo.max'=>'Maximum size is 2 MB image',
-            'my_photo.mimes'=>'Extensions allowed: jpg,png,jpeg,gif,svg',
+            'my_photo.mimes'=>'Extensions allowed: jpg,png,jpeg',
             'my_photo.image'=>'File must be an image',
             'my_photo.dimensions'=>'Minimum width & height: 100, Maximum width & height: 1000'
         ])->validate();

@@ -21,7 +21,7 @@
 
             {{-- CUSTOM INPUT --}}
             <div class="mt-4">
-                <x-jet-label for="my_photo" value="{{ __('My_Photo') }}" />
+                <x-jet-label for="my_photo" value="{{ __('My Photo') }}" />
                 <x-jet-input id="my_photo" class="block mt-1 w-full" type="file" name="my_photo" :value="old('my_photo')" required />
             </div>
 

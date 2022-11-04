@@ -1,4 +1,5 @@
-<x-jet-form-section submit="updateProfileInformation">
+<x-jet-form-section method="POST" submit="updateProfileInformation" enctype="multipart/form-data">
+    @csrf
     <x-slot name="title">
         {{ __('Profile Information') }}
     </x-slot>
@@ -80,6 +81,18 @@
                     </p>
                 @endif
             @endif
+        </div>
+
+        {{-- CUSTOM INPUT --}}
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="my_current_photo" value="{{ __('Current Photo') }}" />
+            <img name="my_current_photo" src="/storage/{{ $this->user->my_photo }}" class="h-70 w-70 rounded-full" alt="">
+        </div>
+
+        {{-- CUSTOM INPUT --}}
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="my_photo" value="{{ __('My Photo') }}" />
+            <x-jet-input id="my_photo" class="block mt-1 w-full" type="file" name="my_photo" wire:model.defer="state.my_photo" />
         </div>
     </x-slot>
 

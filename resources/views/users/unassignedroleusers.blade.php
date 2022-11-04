@@ -9,7 +9,8 @@
                 <div class="row justify-content-center mb-6">
                 <div class="col-lg-6 text-center mx-auto mb-3 mb-md-5 mt-4">
                     <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3 text-danger" >Notice</h5>
-                    <p class="mb-0">Your account has been created successfully created, please wait for the Administrator to assign you a role</p>
+                    <p class="mb-0">Your account has been successfully created, please wait for the Administrator to assign you a role</p>
+                    <p class="mb-0">Usually takes from 1 hour upto 24 hours to get a role assigned</p>
                     <p class="mb-0">Your are seing this because your account has not been assigned a role yet</p>
                 </div>
                 </div>
