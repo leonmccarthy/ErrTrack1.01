@@ -45,8 +45,8 @@
                     <h5 class="card-title mt-2 mb-2">Message</h5>
                     <p class="card-text">{{ $contact->message }}</p> 
                   </div>
-                  <div class="card-footer text-muted">
-                    Sent Date: {{ $contact->created_at }}
+                    <div class="card-footer text-muted">
+                        Sent Date: {{ $contact->created_at }}
                     </div>
                 </div>
               </div>
