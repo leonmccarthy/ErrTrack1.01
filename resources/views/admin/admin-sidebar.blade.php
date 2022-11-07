@@ -20,7 +20,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="assign-error">
+            <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="manage-errors">
               <i class="menu-icon  mdi mdi-biohazard"></i>
               <span class="menu-title">Manage Errors</span>
               <i class="menu-arrow"></i>
@@ -29,6 +29,18 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{ url('/view-all-reported-errors') }}">View Reported Errors</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ url('/view-all-assigned-errors') }}">View Assigned Errors</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#messages" aria-expanded="false" aria-controls="manage-messages">
+              <i class="menu-icon  mdi mdi-biohazard"></i>
+              <span class="menu-title">Manage Messages</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="messages">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/view-contact-us-messages') }}">View Contact Us Messages</a></li>
               </ul>
             </div>
           </li>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Assigned;
 use App\Models\Error;
 use App\Models\User;
+use App\Models\VisitorContact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,6 +34,22 @@ class HomeController extends Controller
         }else{
             return redirect("/")->with('message', "Please wait for the Administrator to assign you a role!");
         }
+    }
+
+    public function contactus(Request $request){
+        $visitorContact = new VisitorContact();
+        if(Auth::user()){
+            $visitorContact->name = Auth::user()->name;
+            $visitorContact->email = Auth::user()->email;
+            $visitorContact->message = $request->message;
+            $visitorContact->save();
+        }else{
+            $visitorContact->name = $request->name;
+            $visitorContact->email = $request->email;
+            $visitorContact->message = $request->message;
+            $visitorContact->save();
+        }
+        return redirect()->back()->with('message', "Message successfully sent! Email reply takes 1-24 hours");
     }
     
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Assigned;
 use App\Models\Error;
 use App\Models\User;
+use App\Models\VisitorContact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -269,5 +270,21 @@ class AdminController extends Controller
                 return redirect("/login");
             }      
             
+        }
+
+        public function contactUsView(){
+            if(Auth::user()){
+                $usertype = Auth::user()->usertype;
+                $username = Auth::user()->name;
+
+                if($usertype=="99"){
+                    $contactMessages = VisitorContact::all();
+                    return view("admin.manage_messages.contact-us-messages", compact("contactMessages", "username"));
+                }else{
+                    return redirect()->back();
+                }
+            }else{
+                return redirect('/login');
+            }
         }
 }

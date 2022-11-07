@@ -40,15 +40,6 @@
         </div>
         <div class="col-md-4 mb-6">
           <div class="text-center px-lg-3">
-            <div class="icon-wrapper shadow-success">
-              <div class="icon icon-success"><span data-feather="tablet"></span></div>
-            </div>
-            <h5 class="mt-3 fw-bold">Role Assigning</h5>
-            <p class="mb-md-0 px-xxl-6">Administrative priviledges of administrators to assign roles as soon as possible</p>
-          </div>
-        </div>
-        <div class="col-md-4 mb-6">
-          <div class="text-center px-lg-3">
             <div class="icon-wrapper shadow-secondary">
               <div class="icon icon-secondary"><span data-feather="printer"></span></div>
             </div>

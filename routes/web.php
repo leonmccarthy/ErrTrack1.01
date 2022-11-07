@@ -22,6 +22,7 @@ Route::get('/', [HomeController::class, "index"]);
 // HOME ROUTES
 Route::get('/home', [HomeController::class, "index"]);
 Route::get("/redirect", [HomeController::class, "redirect"])->name('redirect');
+Route::post("/contactus", [HomeController::class, "contactus"]);
 
 // ADMIN ROUTES
 Route::get('/add-dev', [AdminController::class, 'addDeveloper']);
@@ -37,6 +38,7 @@ Route::get('/view-all-assigned-errors', [AdminController::class, 'viewAllAssigne
 Route::get('/edit-assigned-error/{id}', [AdminController::class, 'editAssignedErrorView']);
 Route::post('/edit-assigned-error-action/{id}', [AdminController::class, 'editAssignedErrorAction']);
 Route::get('/delete-assigned-error/{id}', [AdminController::class, 'deleteAssignedErrorAction']);
+Route::get('/view-contact-us-messages', [AdminController::class, 'contactUsView']);
 
 
 // TESTER ROUTES
