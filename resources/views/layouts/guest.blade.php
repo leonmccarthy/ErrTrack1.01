@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <base href="/resources">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -12,9 +13,9 @@
 
         <!-- Scripts -->
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-        <link href="/resources/css/app.css" rel="stylesheet">
+        <link href="/build/assets/app.5da2c1f8.css" rel="stylesheet">
 
-        <script src="{{ asset('/resources/js/app.js') }}" defer></script>
+        <script src="{{ asset('/build/assets/app.ab93cf8a.js ') }}" defer></script>
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">
