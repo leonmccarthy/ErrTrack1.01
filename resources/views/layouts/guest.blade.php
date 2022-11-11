@@ -12,9 +12,9 @@
 
         <!-- Scripts -->
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-        <link href="/css/app.css" rel="stylesheet">
+        <link href="/resources/css/app.css" rel="stylesheet">
 
-        <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('/resources/js/app.js') }}" defer></script>
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">
