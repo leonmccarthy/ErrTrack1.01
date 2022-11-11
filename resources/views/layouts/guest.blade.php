@@ -15,7 +15,7 @@
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
         <link href="/build/assets/app.6bd3cb76.css" rel="stylesheet">
 
-        <script src="{{ asset('/build/assets/f10bc5fc.js') }}" defer></script>
+        <script src="{{ asset('/build/assets/app.f10bc5fc.js') }}" defer></script>
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">
