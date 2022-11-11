@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TesterController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,3 +65,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+URL::forceScheme('https');
