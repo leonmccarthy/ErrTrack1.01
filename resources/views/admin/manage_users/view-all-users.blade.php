@@ -73,7 +73,7 @@
                                     @elseif($user->usertype=='99')
                                         <label class="badge badge-warning">Admin</label>
                                     @elseif($user->usertype=='1')
-                                        <label class="badge badge-info">Unassigned Role</label>
+                                        <label class="badge badge-danger">Unassigned Role</label>
                                     @endif
                                 </td>
 
