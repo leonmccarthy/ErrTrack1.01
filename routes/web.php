@@ -46,6 +46,7 @@ Route::get('/view-contact-us-messages', [AdminController::class, 'contactUsView'
 Route::get('/report-error', [TesterController::class, 'reportErrorView']);
 Route::post('/report-error-action', [TesterController::class, 'reportErrorAction']);
 Route::get('/view-reported-errors', [TesterController::class, 'viewAllReportedErrors']);
+Route::get('/view-assigned-errors', [TesterController::class, 'viewAllAssignedErrors']);
 
 
 // DEVELOPER ROUTES

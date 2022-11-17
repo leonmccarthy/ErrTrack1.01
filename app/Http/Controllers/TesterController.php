@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Assigned;
 use App\Models\Error;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -71,5 +72,24 @@ class TesterController extends Controller
             return redirect("/login");
         }
                 
+    }
+
+    // view all assigned errors
+    public function viewAllAssignedErrors(){
+        if(Auth::user()){
+            $usertype = Auth::user()->usertype;
+
+            if($usertype=="0"){
+                $assignedErrors = Assigned::all();
+                $username = Auth::user()->name;
+                return view('tester.error.view-all-assigned-errors', compact('username', 'assignedErrors'));
+            }else{
+                return redirect()->back();
+            }
+        }else{
+            return redirect("/login");
+        }
+        
+        
     }
 }

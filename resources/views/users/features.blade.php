@@ -23,7 +23,7 @@
         <div class="col-md-4 mb-6">
           <div class="text-center px-lg-3">
             <div class="icon-wrapper shadow-primary">
-              <div class="icon icon-primary"><span data-feather="monitor"></span></div>
+              <div class="icon icon-primary"><span data-feather="book"></span></div>
             </div>
             <h5 class="mt-3 fw-bold">Ticket Issuing</h5>
             <p class="mb-md-0 px-xxl-6">Adminstrators get to assign the error/issue to a developer</p>
@@ -32,7 +32,7 @@
         <div class="col-md-4 mb-6">
           <div class="text-center px-lg-3">
             <div class="icon-wrapper shadow-warning">
-              <div class="icon icon-warning"><span data-feather="book"></span></div>
+              <div class="icon icon-warning"><span data-feather="monitor"></span></div>
             </div>
             <h5 class="mt-3 fw-bold">Progress Tracking</h5>
             <p class="mb-md-0 px-xxl-6">All users of the system get to view the state & progress of the error/issue</p>
@@ -41,7 +41,7 @@
         <div class="col-md-4 mb-6">
           <div class="text-center px-lg-3">
             <div class="icon-wrapper shadow-secondary">
-              <div class="icon icon-secondary"><span data-feather="printer"></span></div>
+              <div class="icon icon-secondary"><span data-feather="briefcase"></span></div>
             </div>
             <h5 class="mt-3 fw-bold">Remote Tasking</h5>
             <p class="mb-md-0 px-xxl-6">All users get to use the system at their own location of convinience</p>
@@ -50,7 +50,7 @@
         <div class="col-md-4 mb-6">
           <div class="text-center px-lg-3">
             <div class="icon-wrapper shadow-info">
-              <div class="icon icon-info"><span data-feather="edit-2"></span></div>
+              <div class="icon icon-info"><span data-feather="pie-chart"></span></div>
             </div>
             <h5 class="mt-3 fw-bold">Workflow Customization</h5>
             <p class="mb-md-0 px-xxl-6">Every error/issue ticket closed can be reopened & vice-versa </p>
@@ -59,7 +59,7 @@
         <div class="col-md-4 mb-6">
           <div class="text-center px-lg-3">
             <div class="icon-wrapper shadow-info">
-              <div class="icon icon-info"><span data-feather="edit-2"></span></div>
+              <div class="icon icon-info"><span data-feather="crosshair"></span></div>
             </div>
             <h5 class="mt-3 fw-bold">Inter-Operability</h5>
             <p class="mb-md-0 px-xxl-6">Can work on any Operrating System as long as there is a browser</p>

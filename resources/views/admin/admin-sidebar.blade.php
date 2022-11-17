@@ -34,7 +34,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#messages" aria-expanded="false" aria-controls="manage-messages">
-              <i class="menu-icon  mdi mdi-biohazard"></i>
+              <i class="menu-icon   mdi mdi-email"></i>
               <span class="menu-title">Manage Messages</span>
               <i class="menu-arrow"></i>
             </a>
