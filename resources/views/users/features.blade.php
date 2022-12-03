@@ -58,7 +58,7 @@
         </div>
         <div class="col-md-4 mb-6">
           <div class="text-center px-lg-3">
-            <div class="icon-wrapper shadow-info">
+            <div class="icon-wrapper shadow-success">
               <div class="icon icon-info"><span data-feather="crosshair"></span></div>
             </div>
             <h5 class="mt-3 fw-bold">Inter-Operability</h5>

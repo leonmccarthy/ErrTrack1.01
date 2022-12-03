@@ -37,7 +37,7 @@ class CreateNewUser implements CreatesNewUsers
         $photo = $request->file('my_photo');
         $photoname = time().".".$photo->getClientOriginalExtension();
         $photo->move("storage/userPhotos", $photoname);
-        $photopath = "storage/userPhotos/".$photoname;
+        $photopath = "userPhotos/".$photoname;
 
         return User::create([
             'name' => $input['name'],
