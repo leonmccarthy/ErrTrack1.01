@@ -30,7 +30,7 @@ class HomeController extends Controller
         }elseif($usertype == "49"){
             return view("developer.developer-home", compact('username', 'allAssignedErrors'));
         }elseif($usertype == "0"){
-            return view("tester.tester-home", compact('username', "allReportedErrors"));
+            return view("tester.tester-home", compact('username', "allReportedErrors", 'allAssignedErrors'));
         }else{
             return redirect("/")->with('message', "Please wait for the Administrator to assign you a role!");
         }
