@@ -11,10 +11,10 @@
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Scripts -->
-        {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-        <link href="/public/build/assets/app.5da2c1f8.css" rel="stylesheet">
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        {{-- <link href="/public/build/assets/app.5da2c1f8.css" rel="stylesheet">
 
-        <script src="/public/build/assets/app.ab93cf8a.js" defer></script>
+        <script src="/public/build/assets/app.ab93cf8a.js" defer></script> --}}
 
         <!-- Styles -->
         @livewireStyles
