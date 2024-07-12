@@ -67,4 +67,4 @@ Route::middleware([
     })->name('dashboard');
 });
 
-URL::forceScheme('https');
+// URL::forceScheme('https');

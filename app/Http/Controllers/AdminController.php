@@ -194,7 +194,7 @@ class AdminController extends Controller
         if(Auth::user()){
             $usertype = Auth::user()->usertype;
 
-            if($usertype=="99"){
+            if($usertype=="99"){ 
                 $username = Auth::user()->name;
                 $allAssignedErrors = Assigned::all();
                 return view('admin.manage_errors.view-all-assigned-errors', compact('allAssignedErrors', 'username'));

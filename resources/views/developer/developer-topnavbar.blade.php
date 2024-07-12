@@ -7,10 +7,10 @@
       </button>
     </div>
     <div>
-      <a class="navbar-brand brand-logo" href="index.html">
+      <a class="navbar-brand brand-logo" href="{{ url('/redirect') }}">
         <img src="imports/admin/images/logo.svg" alt="logo" />
       </a>
-      <a class="navbar-brand brand-logo-mini" href="index.html">
+      <a class="navbar-brand brand-logo-mini" href="{{ url('/redirect') }}">
         <img src="imports/admin/images/logo-mini.svg" alt="logo" />
       </a>
     </div>
@@ -19,7 +19,7 @@
     <ul class="navbar-nav">
       <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
         <h1 class="welcome-text">Welcome back, <span class="text-black fw-bold">{{ $username }}</span></h1>
-        <h3 class="welcome-sub-text">Your performance summary this week </h3>
+        {{-- <h3 class="welcome-sub-text">Your performance summary this week </h3> --}}
       </li>
     </ul>
     <ul class="navbar-nav ms-auto">
